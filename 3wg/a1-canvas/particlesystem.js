@@ -19,8 +19,8 @@ class ParticleSystem {
 		// TODO: implement particle creation
 		for(let i =0; i<this.particleAmount; i++){
 			let p = new  SquareParticle();
-			p.init([util.rand(1,700),util.rand(1,700)],[0,0]);
-			console.log(p);
+			p.init([util.rand(1,700),util.rand(1,700)],[0,0],4,20,300);
+			//console.log(p);
 			this.particles.push(p);
 
 		}

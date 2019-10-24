@@ -6,6 +6,7 @@ import util from './util.js'
  */
 class Particle {
 	constructor(config) {
+		console.log("particle constructer called");
 		this.position = [0, 0]  // xy
 		this.velocity = [0, 0]	// xy
 
