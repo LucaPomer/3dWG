@@ -17,8 +17,8 @@ class SquareParticle extends Particle{
     }
 
 
-    init(position, velocity, startSize, endSize, lifeTime) {
-        super.init(position,velocity);
+    init( startSize, endSize, lifeTime) {
+        super.init();
         this.startSize=startSize;
         this.endSize=endSize;
         this.lifeTime=lifeTime;

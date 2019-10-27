@@ -12,18 +12,15 @@ class ParticleSystem {
 	constructor(config) {
 		this.emitter = config.emitter
 		this.particles = []
-		this.create();
+		//this.create();
 	}
 
 	create() {
 		// TODO: implement particle creation
-		for(let i =0; i<this.particleAmount; i++){
 			let p = new  SquareParticle();
-			p.init([util.rand(1,700),util.rand(1,700)],[0,0],4,20,300);
-			//console.log(p);
+			p.init(4,20,300);
+			this.emitter.place(p);
 			this.particles.push(p);
-
-		}
 	}
 
 	render(context) {
@@ -32,7 +29,7 @@ class ParticleSystem {
 		}
 	}
 
-	update() {
+	update(){
 		// update the emitter
 		this.emitter.update(this)
 

@@ -17,11 +17,12 @@ class LineEmitter extends ParticleEmitter{
         this.startHeight=startHeight;
 
     }
-    
-    
-    
-    
-    
+
+    update(particleSystem) {
+        super.update(particleSystem);
+    }
+
+
 }
 
 export default LineEmitter;

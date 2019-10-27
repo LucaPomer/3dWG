@@ -25,6 +25,8 @@ window.onload = function() {
     // create actors for the scene
     let particleEmitter = new ParticleEmitter({
         // TODO: emitter properties
+        emitAmount: 10,
+        emitCycle: 200
     })
     let particleSystem = new ParticleSystem({
         emitter: particleEmitter

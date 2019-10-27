@@ -5,8 +5,9 @@ import util from './util.js'
  * A particle is a small graphical unit on which emitters and systems act on.
  */
 class Particle {
+	//position;
+	//velocity;
 	constructor(config) {
-		console.log("particle constructer called");
 		this.position = [0, 0]  // xy
 		this.velocity = [0, 0]	// xy
 
@@ -14,9 +15,9 @@ class Particle {
 	}
 
 
-	init(position, velocity) {
-		this.position = position
-		this.velocity = velocity
+	init() {
+		//this.position = position
+		//this.velocity = velocity
 
 		// TODO: initialize life time properties
 	}
@@ -31,7 +32,7 @@ class Particle {
 
 	render(context) {
 		// TODO: use the canvas2d context API for graphics
-		context.fillStyle = "rgb(0,0,255)";
+		context.fillStyle = "rgb(255,0,255)";
 		context.fillRect(this.position[1,0],10,100,100);
 
 	}
