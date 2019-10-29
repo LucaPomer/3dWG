@@ -9,10 +9,6 @@ import util from './util.js'
  */
 
 class LineEmitter extends ParticleEmitter{
-    lineLength;
-    lineHeight;
-    distancePerParticle;
-    nextParticlePos;
 
     constructor(config){
         super(config);

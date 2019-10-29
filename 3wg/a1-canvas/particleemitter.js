@@ -6,10 +6,8 @@ import util from './util.js'
  */
 class ParticleEmitter {
 	emitPosition;
-	emitAmount = 10;
 	emitNow=false;
 	emitCount = 0;
-	emitCycle;
 	constructor(config) {
 		// TODO: emitter properties
 		this.emitAmount=config.emitAmount;

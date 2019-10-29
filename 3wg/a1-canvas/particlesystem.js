@@ -13,6 +13,7 @@ class ParticleSystem {
 		this.emitter = config.emitter
 		this.particleConstructor = config.particleConstructor
 		this.particleLifeTime = config.particleLifeTime;
+		this.startSpeed = config.startSpeed;
 		this.particles = []
 		//this.create();
 	}

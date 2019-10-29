@@ -25,8 +25,8 @@ class Particle {
 
 	update() {
 		// integrate movement properties
-		this.position[0] += this.velocity[0]
-		this.position[1] += this.velocity[1]
+		//this.position[0] += this.velocity[0]
+		//this.position[1] += this.velocity[1]
 		//console.log(this.position);
 
 		// TODO: integrate life time properties

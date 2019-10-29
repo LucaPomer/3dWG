@@ -10,6 +10,7 @@ import LineEmitter from "./lineEmitter.js";
 import ExplosionEmitter from "./explosionEmitter.js";
 import ExplosionParticle from "./explosionParticle.js";
 import SquareParticle from "./squareParticle.js";
+import CircleParticle from "./circleParticle.js";
 
 
 // called when the index.html is loaded by the browser
@@ -31,10 +32,10 @@ window.onload = function() {
     // create actors for the scene
     let lineEmitter = new LineEmitter({
         // TODO: emitter properties
-        emitAmount: 10,
-        emitCycle: 20,
-        lineLength:400,
-        lineHeight: 50,
+        emitAmount:5,
+        emitCycle: 200,
+        lineLength:100,
+        lineHeight: 100,
         lineStart: 200
 
 
@@ -42,7 +43,7 @@ window.onload = function() {
     let particleSystem = new ParticleSystem({
         emitter: lineEmitter,
         particleLifeTime: 100,
-        particleConstructor: Particle
+        particleConstructor: CircleParticle
         // TODO: particle system properties (e.g. particle type)
     })
 
@@ -50,15 +51,15 @@ window.onload = function() {
     //flame explosion
     // create actors for the scene
     let explosionEmitter = new ExplosionEmitter({
-        emitAmount: 100,
+        emitAmount: 50,
         emitCycle: 20,
-        radius:50,
+        radius:5,
         middle: [100,100],
 
     })
     let particleSystem2 = new ParticleSystem({
         emitter: explosionEmitter,
-        particleLifeTime: 10,
+        particleLifeTime: 50,
         particleConstructor: ExplosionParticle
         // TODO: particle system properties (e.g. particle type)
     })
@@ -67,8 +68,8 @@ window.onload = function() {
     let lineEmitter2 = new LineEmitter({
         // TODO: emitter properties
         emitAmount: 10,
-        emitCycle: 20,
-        lineLength:200,
+        emitCycle: 10,
+        lineLength:300,
         lineHeight: 200,
         lineStart: 400
 
@@ -83,8 +84,8 @@ window.onload = function() {
     // create and populate our scene
     let scene = new Scene()
     scene.add([
-        //particleSystem,
-        //particleSystem2,
+        particleSystem,
+        particleSystem2,
         particleSystemSquare
     ])
 

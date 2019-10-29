@@ -11,7 +11,10 @@ class ExplosionParticle extends Particle{
     speedDecreaseY;
     constructor(config) {
         super(config);
+        this.startSize = 25
         this.image = new Image(10,10);
+
+
 
     }
 
@@ -27,6 +30,9 @@ class ExplosionParticle extends Particle{
         //movements outwards
         this.velocity[0]-=this.speedDecreaseX;
         this.velocity[1]-=this.speedDecreaseY;
+        this.position[0] += this.velocity[0];
+        this.position[1] += this.velocity[1];
+        this.startSize-=0.5;
         super.update();
 
     }
@@ -35,7 +41,7 @@ class ExplosionParticle extends Particle{
         if(!this.dead){
             //context.fillStyle = "rgb(255,0,0)";
             //context.fillRect(this.position[0], this.position[1], 10, 10);
-            context.drawImage(this.image,this.position[0],this.position[1],20,20);
+            context.drawImage(this.image,this.position[0],this.position[1],this.startSize,this.startSize);
             //console.log(this.position);
 
         }
