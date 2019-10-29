@@ -9,13 +9,15 @@ import util from './util.js'
  */
 
 class ExplosionEmitter extends ParticleEmitter{
-    radius;
-    nextParticlePos;
-    middle;
 
     constructor(config){
         super(config);
         this.middle=config.middle;
+        this.radius=config.radius;
+    }
+
+    update(particleSystem) {
+        super.update(particleSystem);
     }
 
     emit(particleSystem) {
@@ -23,11 +25,13 @@ class ExplosionEmitter extends ParticleEmitter{
     }
 
     place(particle) {
-        //place within a line
-        this.emitPosition = [util.rand(this.middle[0]-this.radius,this.radius),util.rand(this.middle[1]-this.radius,this.radius)];
-        //particle.velocity=[0,1];
+        let randX = util.rand(-this.radius,this.radius);
+        let randY = util.rand(-this.radius,this.radius);
+
+        this.emitPosition = [randX+this.middle[0],randY+this.middle[1]];
+        particle.velocity=[this.emitPosition[0] -this.middle[0],this.emitPosition[1] -this.middle[1]];
         particle.position=this.emitPosition;
-        console.log(particle.position);
+
         //this.nextParticlePos+=this.distancePerParticle;
     }
 }

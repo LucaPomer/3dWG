@@ -2,11 +2,13 @@
 import Renderer from './renderer.js'
 import Controller from './controller.js'
 import Scene from './scene.js'
+import Particle from './particle.js'
 import ParticleSystem from './particlesystem.js'
 import ParticleEmitter from './particleemitter.js'
 import util from './util.js'
 import LineEmitter from "./lineEmitter.js";
 import ExplosionEmitter from "./explosionEmitter.js";
+import ExplosionParticle from "./explosionParticle.js";
 
 
 // called when the index.html is loaded by the browser
@@ -34,26 +36,30 @@ window.onload = function() {
 
     })
     let particleSystem = new ParticleSystem({
-        emitter: particleEmitter
+        emitter: particleEmitter,
+        particleConstructor: Particle
         // TODO: particle system properties (e.g. particle type)
     })
 
     // create actors for the scene
-    let particleEmitter2 = new LineEmitter({
-       radius:50,
+    let particleEmitter2 = new ExplosionEmitter({
+        emitAmount: 100,
+        emitCycle: 20,
+        radius:50,
         middle: [100,100]
 
     })
     let particleSystem2 = new ParticleSystem({
-        emitter: particleEmitter2
+        emitter: particleEmitter2,
+        particleConstructor: ExplosionParticle
         // TODO: particle system properties (e.g. particle type)
     })
 
     // create and populate our scene
     let scene = new Scene()
     scene.add([
-       particleSystem,
-        //particleSystem2
+        particleSystem,
+        particleSystem2
     ])
 
     // stick the engine together

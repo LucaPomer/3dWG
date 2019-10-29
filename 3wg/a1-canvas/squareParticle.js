@@ -6,9 +6,6 @@ class SquareParticle extends Particle{
     startSize =0
     endSize =0;
     sizeGrowth =0;
-    lifeTime =0;
-    currentAge = 0;
-    dead=false;
 
 
     constructor(config){
@@ -18,10 +15,9 @@ class SquareParticle extends Particle{
 
 
     init( startSize, endSize, lifeTime) {
-        super.init();
+        super.init(lifeTime);
         this.startSize=startSize;
         this.endSize=endSize;
-        this.lifeTime=lifeTime;
         this.sizeGrowth=(this.endSize-this.startSize)/this.lifeTime;
 
     }
@@ -29,13 +25,6 @@ class SquareParticle extends Particle{
     update() {
         // integrate movement properties
         super.update();
-        this.currentAge++;
-        if(this.currentAge<this.lifeTime){
-            this.startSize+=this.sizeGrowth;
-        }
-        else{
-            this.dead=true;
-        }
 
     }
 

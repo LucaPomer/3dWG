@@ -11,17 +11,18 @@ class ParticleSystem {
 	particleAmount = 10;
 	constructor(config) {
 		this.emitter = config.emitter
+		this.particleConstructor = config.particleConstructor
 		this.particles = []
 		//this.create();
 	}
 
 	create() {
 		// TODO: implement particle creation
-			let p = new Particle({
+			let p = new this.particleConstructor({
 				position: [1,1],
-				velocity: [0,5]
+				velocity: [0,1]
 			});
-			p.init(4,20,300);
+			p.init(200);
 			this.emitter.place(p);
 			this.particles.push(p);
 
