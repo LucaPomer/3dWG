@@ -35,7 +35,7 @@ class ExplosionParticle extends Particle{
         if(!this.dead){
             //context.fillStyle = "rgb(255,0,0)";
             //context.fillRect(this.position[0], this.position[1], 10, 10);
-            context.drawImage(this.image,this.position[0],this.position[1],10,10);
+            context.drawImage(this.image,this.position[0],this.position[1],20,20);
             //console.log(this.position);
 
         }

@@ -11,7 +11,6 @@ import util from './util.js'
 class LineEmitter extends ParticleEmitter{
     lineLength;
     lineHeight;
-    lineStart=200;
     distancePerParticle;
     nextParticlePos;
 
@@ -19,6 +18,7 @@ class LineEmitter extends ParticleEmitter{
         super(config);
         this.lineLength=config.lineLength;
         this.lineHeight=config.lineHeight;
+        this.lineStart = config.lineStart;
         this.distancePerParticle=this.lineLength/this.emitAmount;
         this.nextParticlePos=this.lineStart+this.distancePerParticle;
     }

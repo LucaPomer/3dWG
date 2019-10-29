@@ -12,6 +12,7 @@ class ParticleSystem {
 	constructor(config) {
 		this.emitter = config.emitter
 		this.particleConstructor = config.particleConstructor
+		this.particleLifeTime = config.particleLifeTime;
 		this.particles = []
 		//this.create();
 	}
@@ -22,7 +23,7 @@ class ParticleSystem {
 				position: [1,1],
 				velocity: [0,1]
 			});
-			p.init(200);
+			p.init(this.particleLifeTime);
 			this.emitter.place(p);
 			this.particles.push(p);
 
