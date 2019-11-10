@@ -8,12 +8,12 @@ import util from './util.js'
  * An emitter knows only how much and where to spawn particles.
  */
 
-class ExplosionEmitter extends ParticleEmitter{
+class ExplosionEmitter extends ParticleEmitter {
 
-    constructor(config){
+    constructor(config) {
         super(config);
-        this.middle=config.middle;
-        this.radius=config.radius;
+        this.middle = config.middle;
+        this.radius = config.radius;
     }
 
     update(particleSystem) {
@@ -25,12 +25,12 @@ class ExplosionEmitter extends ParticleEmitter{
     }
 
     place(particle) {
-        let randX = util.rand(-this.radius,this.radius);
-        let randY = util.rand(-this.radius,this.radius);
+        let randX = util.rand(-this.radius, this.radius);
+        let randY = util.rand(-this.radius, this.radius);
 
-        this.emitPosition = [randX+this.middle[0],randY+this.middle[1]];
-        particle.velocity=[this.emitPosition[0] -this.middle[0],this.emitPosition[1] -this.middle[1]];
-        particle.position=this.emitPosition;
+        this.emitPosition = [randX + this.middle[0], randY + this.middle[1]];
+        particle.velocity = [this.emitPosition[0] - this.middle[0], this.emitPosition[1] - this.middle[1]];
+        particle.position = this.emitPosition;
 
         //this.nextParticlePos+=this.distancePerParticle;
     }
