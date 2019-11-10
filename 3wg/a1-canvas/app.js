@@ -12,6 +12,7 @@ import ExplosionParticle from "./explosionParticle.js";
 import SquareParticle from "./squareParticle.js";
 import CircleParticle from "./circleParticle.js";
 import BezierEmitter from "./bezierEmitter.js";
+import ParametricCurveEmitter from "./paramtericCurveEmitter.js";
 
 
 // called when the index.html is loaded by the browser
@@ -84,7 +85,6 @@ window.onload = function() {
 
 
     //bezier curve
-    // growing square
     let bezierEmitter = new BezierEmitter({
         // TODO: emitter properties
         emitAmount: 30,
@@ -103,14 +103,39 @@ window.onload = function() {
         // TODO: particle system properties (e.g. particle type)
     })
 
+    //parametric curve
+    let parametricEmitter = new ParametricCurveEmitter({
+        // TODO: emitter properties
+        emitAmount: 100,
+        emitCycle: 10,
+        startPoint : [200,200],
+        tMin: -30,
+        tMax: 30,
+        functionX:  function (t) {
+            return (Math.sin(t)*100);
+        },
+        functionY:  function (t) {
+            return (Math.cos(2*t)*30);
+        },
+
+
+    })
+    let particleSystemParametric = new ParticleSystem({
+        emitter: parametricEmitter,
+        particleLifeTime: 200,
+        particleConstructor: Particle
+        // TODO: particle system properties (e.g. particle type)
+    })
+
 
     // create and populate our scene
     let scene = new Scene()
     scene.add([
        // particleSystem,
        // particleSystem2,
-       // particleSystemSquare
-        particleSystemBezier
+       // particleSystemSquare,
+       // particleSystemBezier,
+        particleSystemParametric
     ])
 
     // stick the engine together
