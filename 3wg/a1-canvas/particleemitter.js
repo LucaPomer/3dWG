@@ -1,5 +1,6 @@
 
 import util from './util.js'
+import Dragger from "./dragger.js";
 
 /*
  * An emitter knows only how much and where to spawn particles.
@@ -12,6 +13,9 @@ class ParticleEmitter {
 		// TODO: emitter properties
 		this.emitAmount=config.emitAmount;
 		this.emitCycle=config.emitCycle;
+		this.draggers = [];
+		this.emitPosition=[0,0];
+		//this.setDraggers()
 	}
 
 
@@ -48,6 +52,21 @@ class ParticleEmitter {
 		this.emitPosition=[1,1];
 		particle.velocity = [1,1];
 		particle.position = this.emitPosition;
+	}
+	setDraggers(){
+		let dragger = new Dragger({
+			positionX: this.emitPosition[0],
+			positionY: this.emitPosition[1]
+		})
+		this.draggers.push(dragger);
+	}
+
+	getDraggers(){
+		if(this.draggers.length===0){
+			this.setDraggers()
+		}
+
+		return this.draggers;
 	}
 
 }

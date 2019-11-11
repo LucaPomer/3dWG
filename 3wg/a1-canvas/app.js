@@ -49,6 +49,12 @@ window.onload = function() {
         // TODO: particle system properties (e.g. particle type)
     })
 
+    let particleSystemDraggerTest = new ParticleSystem({
+        emitter: lineEmitter,
+        particleLifeTime: 100,
+        particleConstructor: Particle
+        // TODO: particle system properties (e.g. particle type)
+    })
 
     //flame explosion
     // create actors for the scene
@@ -59,7 +65,7 @@ window.onload = function() {
         middle: [100,100],
 
     })
-    let particleSystem2 = new ParticleSystem({
+    let particleExplosion = new ParticleSystem({
         emitter: explosionEmitter,
         particleLifeTime: 50,
         particleConstructor: ExplosionParticle
@@ -131,11 +137,12 @@ window.onload = function() {
     // create and populate our scene
     let scene = new Scene()
     scene.add([
-       // particleSystem,
-       // particleSystem2,
+        //particleSystem,
+        particleSystemDraggerTest,
+      // particleExplosion,
        // particleSystemSquare,
        // particleSystemBezier,
-        particleSystemParametric
+       // particleSystemParametric
     ])
 
     // stick the engine together

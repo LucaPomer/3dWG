@@ -53,6 +53,10 @@ class ParticleSystem {
 
         // TODO: more logic over the particles if necessary
     }
+
+    getDraggers(){
+            return this.emitter.getDraggers();
+    }
 }
 
 

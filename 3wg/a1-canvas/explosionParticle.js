@@ -13,7 +13,7 @@ class ExplosionParticle extends Particle{
         super(config);
         this.startSize = 25
         this.image = new Image(10,10);
-        this.RotationDegree = 90;
+        this.RotationDegree = 0;
 
 
 
@@ -34,6 +34,12 @@ class ExplosionParticle extends Particle{
         this.position[0] += this.velocity[0];
         this.position[1] += this.velocity[1];
         this.startSize-=0.5;
+        if (this.RotationDegree<351){
+            this.RotationDegree+=4;
+        }
+        else {
+            this.RotationDegree=0
+        }
         super.update();
 
     }
@@ -53,7 +59,7 @@ class ExplosionParticle extends Particle{
       //  ctx.save();
         ctx.setTransform(1,0,0,1,0,0)
         ctx.translate(this.position[0], this.position[1]);
-        ctx.rotate(this.RotationDegree*Math.PI/180);
+        ctx.rotate(this.RotationDegree*Math.PI/90);
         ctx.drawImage(this.image,0,0,this.startSize,this.startSize);
         //ctx.drawImage(this.image,-this.image.width/2,-this.image.width/2);
         //ctx.rotate(-(this.RotationDegree*Math.PI/180));

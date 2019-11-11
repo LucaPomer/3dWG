@@ -11,8 +11,33 @@ class Controller {
 			pos : [],
 			dxy : []
 		}
+		this.debugModus = true;
+		this.debugModusOn(this.debugModus)
 
 		this.listen()
+	}
+
+	debugModusOn(want){
+		//want the debug modus
+		let actors = this.scene.actors;
+		let collected = []
+		if(want){
+			// first only collect
+			for (let actor of actors) {
+				//ToDO : is this a particle system ?
+			 	collected.concat( actor.getDraggers());
+
+			}
+			// second add all to scene
+			this.scene.add(collected);
+		}
+		else{
+			for (let actor of actors) {
+				//ToDO : is this a particle system ?
+				let draggers =  actor.getDraggers();
+				this.scene.remove(draggers);
+			}
+		}
 	}
 	
 
