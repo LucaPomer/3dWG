@@ -47,6 +47,44 @@ class Scene {
 
     pick(position) {
         // TODO: implement picking of actors
+        for (let actor of this.actors) {
+            if (typeof actor.isHit !== 'function' ||
+                typeof actor.drag !== 'function')
+            {
+                continue
+            }
+            if(actor.isHit(position)){
+                actor.move=true;
+
+            }
+
+        }
+
+    }
+    unPick(position) {
+        for (let actor of this.actors) {
+            if (typeof actor.isHit !== 'function' ||
+                typeof actor.drag !== 'function')
+            {
+                continue
+            }
+            if(actor.isHit(position)){
+                actor.move=false;
+            }
+
+        }
+    }
+    moveDraggers(position){
+        for (let actor of this.actors) {
+            if (typeof actor.isHit !== 'function' ||
+                typeof actor.drag !== 'function') {
+                continue
+            }
+            if (actor.move) {
+                actor.drag(position);
+
+            }
+        }
     }
 }
 

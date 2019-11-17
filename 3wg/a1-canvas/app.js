@@ -95,7 +95,7 @@ window.onload = function() {
         // TODO: emitter properties
         emitAmount: 30,
         emitCycle: 10,
-        p0: [100.0,100.0],
+        p0: [130.0,100.0],
         p1: [150.0,50.0],
         p2: [250.0,50.0],
         p3: [310.0,100.0],
@@ -139,10 +139,10 @@ window.onload = function() {
     scene.add([
         //particleSystem,
         particleSystemDraggerTest,
-      // particleExplosion,
+         particleExplosion,
        // particleSystemSquare,
-       // particleSystemBezier,
-       // particleSystemParametric
+        particleSystemBezier,
+        particleSystemParametric
     ])
 
     // stick the engine together

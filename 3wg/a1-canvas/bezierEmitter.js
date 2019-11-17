@@ -2,6 +2,7 @@
 
 import util from './util.js'
 import ParticleEmitter from "./particleemitter.js";
+import Dragger from "./dragger.js";
 
 class BezierEmitter extends ParticleEmitter {
 
@@ -13,6 +14,14 @@ class BezierEmitter extends ParticleEmitter {
         this.p2 = config.p2;
         this.p3 = config.p3;
         this.tDist = 1 / this.emitAmount;
+
+    }
+    update(particleSystem) {
+        super.update(particleSystem);
+        this.p0 = this.draggers[0].position;
+        this.p1 = this.draggers[1].position;
+        this.p2 = this.draggers[2].position;
+        this.p3 = this.draggers[3].position;
 
     }
 
@@ -40,6 +49,30 @@ class BezierEmitter extends ParticleEmitter {
         this.emitPosition = [cX,cY];
         particle.position = this.emitPosition;
     }
+
+    setDraggers(){
+
+        let draggerP0 = new Dragger({
+            positionDragger: this.p0
+        })
+        let draggerP1 = new Dragger({
+            positionDragger: this.p1
+        })
+        let draggerP2 = new Dragger({
+            positionDragger: this.p2
+        })
+        let draggerP3 = new Dragger({
+            positionDragger: this.p3
+        })
+        this.draggers.push(draggerP0);
+        this.draggers.push(draggerP1);
+        this.draggers.push(draggerP2);
+        this.draggers.push(draggerP3);
+
+
+    }
+
+
 
 
 }

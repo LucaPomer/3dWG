@@ -1,5 +1,6 @@
 import ParticleEmitter from "./particleemitter.js";
 import util from './util.js'
+import Dragger from "./dragger.js";
 
 //"user strict"
 
@@ -18,6 +19,7 @@ class ExplosionEmitter extends ParticleEmitter {
 
     update(particleSystem) {
         super.update(particleSystem);
+        this.middle = this.draggers[0].position
     }
 
     emit(particleSystem) {
@@ -33,6 +35,13 @@ class ExplosionEmitter extends ParticleEmitter {
         particle.position = this.emitPosition;
 
         //this.nextParticlePos+=this.distancePerParticle;
+    }
+
+    setDraggers(){
+        let dragger = new Dragger({
+            positionDragger: this.middle
+        })
+        this.draggers.push(dragger);
     }
 }
 

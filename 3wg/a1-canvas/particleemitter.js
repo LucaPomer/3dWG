@@ -20,6 +20,7 @@ class ParticleEmitter {
 
 
 	update(particleSystem) {
+		this.emitPosition= this.draggers[0].position;
 		// TODO: implement the emitters emit behaviour
 		this.emitCount++;
 		if (this.emitCount>this.emitCycle){
@@ -55,8 +56,7 @@ class ParticleEmitter {
 	}
 	setDraggers(){
 		let dragger = new Dragger({
-			positionX: this.emitPosition[0],
-			positionY: this.emitPosition[1]
+			positionDragger: this.emitPosition
 		})
 		this.draggers.push(dragger);
 	}

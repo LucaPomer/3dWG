@@ -1,6 +1,7 @@
 "use strict"
 
 import ParticleEmitter from "./particleemitter.js";
+import Dragger from "./dragger.js";
 
 class ParametricCurveEmitter extends ParticleEmitter {
     constructor(config) {
@@ -12,6 +13,11 @@ class ParametricCurveEmitter extends ParticleEmitter {
         this.deltaT = (this.tMax - this.tMin) / this.emitAmount;
         this.t = this.tMin;
         this.startingPointOnCanvas = config.startPoint;
+    }
+
+    update(particleSystem) {
+        super.update(particleSystem);
+       this.startingPointOnCanvas = this.draggers[0].position;
     }
 
     emit(particleSystem) {
@@ -26,6 +32,13 @@ class ParametricCurveEmitter extends ParticleEmitter {
         this.t += this.deltaT;
         this.emitPosition = [xPosition, yPosition];
         particle.position = this.emitPosition;
+    }
+
+    setDraggers(){
+        let dragger = new Dragger({
+            positionDragger: this.startingPointOnCanvas
+        })
+        this.draggers.push(dragger);
     }
 
 }

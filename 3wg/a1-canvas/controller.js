@@ -25,7 +25,8 @@ class Controller {
 			// first only collect
 			for (let actor of actors) {
 				//ToDO : is this a particle system ?
-			 	collected.concat( actor.getDraggers());
+				let draggersToAdd = actor.getDraggers()
+			 	collected = collected.concat(draggersToAdd );
 
 			}
 			// second add all to scene
@@ -34,9 +35,10 @@ class Controller {
 		else{
 			for (let actor of actors) {
 				//ToDO : is this a particle system ?
-				let draggers =  actor.getDraggers();
-				this.scene.remove(draggers);
+				collected = collected.concat( actor.getDraggers());
+
 			}
+			this.scene.remove(collected);
 		}
 	}
 	
@@ -52,6 +54,10 @@ class Controller {
 			mouse.dxy[0] = newpos[0] - mouse.pos[0]
 			mouse.dxy[1] = newpos[1] - mouse.pos[1]
 			mouse.pos = newpos
+
+			//console.log("mose move event");
+			this.scene.moveDraggers(this.contextPos(event));
+
 		}, false)
 
 		canvas.addEventListener('click', (event) => {
@@ -59,9 +65,32 @@ class Controller {
 			canvas.setAttribute('tabindex','0')
 			canvas.focus()
 
+			//console.log("mose click event");
+			// perform picking on the scene
+
+		})
+
+		canvas.addEventListener('mouseup', (event) => {
+			// activate that keypresses are associated with the canvas
+			canvas.setAttribute('tabindex','0')
+			canvas.focus()
+
+			//console.log("moseUpEvent");
+
+			// perform picking on the scene
+			this.scene.unPick(this.contextPos(event))
+		})
+		canvas.addEventListener('mousedown', (event) => {
+			// activate that keypresses are associated with the canvas
+			canvas.setAttribute('tabindex','0')
+			canvas.focus()
+
+			//console.log("mose don event");
+
 			// perform picking on the scene
 			this.scene.pick(this.contextPos(event))
 		})
+
 
 		canvas.addEventListener('keypress', (event) => {
 			switch (event.code) {

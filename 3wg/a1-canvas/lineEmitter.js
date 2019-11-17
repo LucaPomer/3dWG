@@ -1,5 +1,6 @@
 import ParticleEmitter from "./particleemitter.js";
 import util from './util.js'
+import Dragger from "./dragger.js";
 
 //"user strict"
 
@@ -18,6 +19,13 @@ class LineEmitter extends ParticleEmitter{
         this.distancePerParticle=this.lineLength/this.emitAmount;
         this.nextParticlePos=this.lineStart+this.distancePerParticle;
     }
+    update(particleSystem) {
+        super.update(particleSystem);
+        //the the hight of the particle system to dragger
+        this.lineHeight = this.draggers[0].position[1];
+        this.lineStart = (this.draggers[0].position[0])+ this.distancePerParticle;
+        this.nextParticlePos = this.draggers[0].position[0] + this.distancePerParticle;
+    }
 
     emit(particleSystem) {
         super.emit(particleSystem);
@@ -30,6 +38,13 @@ class LineEmitter extends ParticleEmitter{
         //particle.velocity=[0,1];
         particle.position=this.emitPosition;
         this.nextParticlePos+=this.distancePerParticle;
+    }
+
+    setDraggers() {
+        let dragger = new Dragger({
+            positionDragger:[(this.lineStart - this.distancePerParticle),this.lineHeight]
+        })
+        this.draggers.push(dragger);
     }
 }
 
