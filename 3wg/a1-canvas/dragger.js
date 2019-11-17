@@ -16,7 +16,7 @@ class Dragger {
         if (positionMouse[0] > this.position[0] - this.imageSize && positionMouse[0] < this.position[0] + this.imageSize
 
             && positionMouse[1] > this.position[1] - this.imageSize && positionMouse[1] < this.position[1] + this.imageSize) {
-           console.log("dragger hit");
+          // console.log("dragger hit");
             return true;
 
         } else {
@@ -35,6 +35,7 @@ class Dragger {
         context.fillStyle = "rgb(184,184,185)";
         //context.fillRect(this.position[0], this.position[1], 10, 10);
         context.drawImage(this.image,this.position[0],this.position[1],20,20);
+
     }
 
     update() {

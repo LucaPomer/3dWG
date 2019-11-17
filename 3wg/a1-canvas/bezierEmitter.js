@@ -72,6 +72,16 @@ class BezierEmitter extends ParticleEmitter {
 
     }
 
+    render(ctx){
+        ctx.setTransform(1,0,0,1,0,0);
+        ctx.beginPath();
+        ctx.moveTo(this.p0[0], this.p0[1]);
+        ctx.lineTo(this.p1[0], this.p1[1]);
+        ctx.lineTo(this.p2[0], this.p2[1]);
+        ctx.stroke();
+        ctx.setTransform(1,0,0,1,0,0);
+    }
+
 
 
 

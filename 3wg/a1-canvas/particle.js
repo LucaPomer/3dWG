@@ -8,7 +8,8 @@ class Particle {
 
     constructor(config) {
         this.position = config.position;  // xy
-        this.velocity = config.velocity;	// xy
+        this.velocity = config.velocity;
+        this.image = new Image(10,10);// xy
 
         // TODO: define life time properties
     }
@@ -19,6 +20,7 @@ class Particle {
         //this.velocity = velocity
         // TODO: initialize life time properties
         this.lifeTime = lifeTime;
+        this.image.src = 'res/star.png';
     }
 
     update() {
@@ -38,8 +40,8 @@ class Particle {
     render(context) {
         // TODO: use the canvas2d context API for graphics
         if (!this.dead) {
-            context.fillStyle = "rgb(85,255,94)";
-            context.fillRect(this.position[0], this.position[1], 10, 10);
+            //context.fillStyle = "rgb(85,255,94)";
+            context.drawImage(this.image,this.position[0],this.position[1],15,15);
         }
 
     }

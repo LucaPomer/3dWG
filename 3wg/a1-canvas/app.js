@@ -41,7 +41,7 @@ window.onload = function() {
         lineStart: 200
 
 
-})
+    })
     let particleSystem = new ParticleSystem({
         emitter: lineEmitter,
         particleLifeTime: 100,
@@ -62,7 +62,7 @@ window.onload = function() {
         emitAmount: 50,
         emitCycle: 20,
         radius:5,
-        middle: [100,100],
+        middle: [300,300],
 
     })
     let particleExplosion = new ParticleSystem({
@@ -76,7 +76,7 @@ window.onload = function() {
     let lineEmitter2 = new LineEmitter({
         // TODO: emitter properties
         emitAmount: 10,
-        emitCycle: 10,
+        emitCycle: 20,
         lineLength:300,
         lineHeight: 200,
         lineStart: 400
@@ -93,8 +93,8 @@ window.onload = function() {
     //bezier curve
     let bezierEmitter = new BezierEmitter({
         // TODO: emitter properties
-        emitAmount: 30,
-        emitCycle: 10,
+        emitAmount: 20,
+        emitCycle: 8,
         p0: [130.0,100.0],
         p1: [150.0,50.0],
         p2: [250.0,50.0],
@@ -104,7 +104,7 @@ window.onload = function() {
     })
     let particleSystemBezier = new ParticleSystem({
         emitter: bezierEmitter,
-        particleLifeTime: 200,
+        particleLifeTime: 10,
         particleConstructor: Particle
         // TODO: particle system properties (e.g. particle type)
     })
@@ -112,8 +112,8 @@ window.onload = function() {
     //parametric curve
     let parametricEmitter = new ParametricCurveEmitter({
         // TODO: emitter properties
-        emitAmount: 100,
-        emitCycle: 10,
+        emitAmount: 60,
+        emitCycle: 6,
         startPoint : [200,200],
         tMin: -30,
         tMax: 30,
@@ -128,7 +128,7 @@ window.onload = function() {
     })
     let particleSystemParametric = new ParticleSystem({
         emitter: parametricEmitter,
-        particleLifeTime: 200,
+        particleLifeTime: 30,
         particleConstructor: Particle
         // TODO: particle system properties (e.g. particle type)
     })
@@ -137,10 +137,10 @@ window.onload = function() {
     // create and populate our scene
     let scene = new Scene()
     scene.add([
-        //particleSystem,
-        particleSystemDraggerTest,
+        particleSystem,
+       // particleSystemDraggerTest,
          particleExplosion,
-       // particleSystemSquare,
+        particleSystemSquare,
         particleSystemBezier,
         particleSystemParametric
     ])

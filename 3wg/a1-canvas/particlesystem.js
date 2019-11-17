@@ -56,7 +56,10 @@ class ParticleSystem {
 
     getDraggers(){
             return this.emitter.getDraggers();
+
     }
+
+
 }
 
 

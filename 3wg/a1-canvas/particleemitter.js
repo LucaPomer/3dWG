@@ -69,6 +69,7 @@ class ParticleEmitter {
 		return this.draggers;
 	}
 
+
 }
 
 export default ParticleEmitter

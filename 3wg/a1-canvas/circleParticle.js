@@ -19,8 +19,8 @@ class CircleParticle extends Particle {
 
     update() {
         this.velocity[1] -= this.SpeedDecrease;
-        this.position[0] += this.velocity[0]
-        this.position[1] += this.velocity[1]
+        this.position[0] += this.velocity[0];
+        this.position[1] += this.velocity[1];
         super.update();
     }
 
