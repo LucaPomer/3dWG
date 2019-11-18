@@ -1,6 +1,3 @@
-
-import util from './util.js'
-
 /*
  * Ordered collection of actors.
  * Actors must provide a render/update interface.
@@ -9,14 +6,14 @@ class Scene {
     constructor() {
         this.actors = []
     }
-     
+
     // add actors to the scene
     add(actors) {
         for (let actor of actors) {
             if (typeof actor.render !== 'function' ||
                 typeof actor.update !== 'function')
                 continue
-            
+
             this.actors.push(actor)
         }
     }
@@ -27,7 +24,7 @@ class Scene {
             let id = this.actors.indexOf(actor)
             if (id !== -1) {
                 this.actors.splice(id, 1)
-            }   
+            }
         }
     }
 
@@ -46,35 +43,34 @@ class Scene {
     }
 
     pick(position) {
-        // TODO: implement picking of actors
         for (let actor of this.actors) {
             if (typeof actor.isHit !== 'function' ||
-                typeof actor.drag !== 'function')
-            {
+                typeof actor.drag !== 'function') {
                 continue
             }
-            if(actor.isHit(position)){
-                actor.move=true;
+            if (actor.isHit(position)) {
+                actor.move = true;
 
             }
 
         }
 
     }
+
     unPick(position) {
         for (let actor of this.actors) {
             if (typeof actor.isHit !== 'function' ||
-                typeof actor.drag !== 'function')
-            {
+                typeof actor.drag !== 'function') {
                 continue
             }
-            if(actor.isHit(position)){
-                actor.move=false;
+            if (actor.isHit(position)) {
+                actor.move = false;
             }
 
         }
     }
-    moveDraggers(position){
+
+    moveDraggers(position) {
         for (let actor of this.actors) {
             if (typeof actor.isHit !== 'function' ||
                 typeof actor.drag !== 'function') {

@@ -46,23 +46,17 @@ class ExplosionParticle extends Particle{
 
     render(context) {
         if(!this.dead){
-            //context.fillStyle = "rgb(255,0,0)";
-            //context.fillRect(this.position[0], this.position[1], 10, 10);
             this.drawRotated(context)
-           // context.drawImage(this.image,this.position[0],this.position[1],this.startSize,this.startSize);
-            //console.log(this.position);
 
         }
     }
 
     drawRotated(ctx){
-      //  ctx.save();
         ctx.setTransform(1,0,0,1,0,0)
         ctx.translate(this.position[0], this.position[1]);
         ctx.rotate(this.RotationDegree*Math.PI/90);
         ctx.drawImage(this.image,0,0,this.startSize,this.startSize);
         ctx.setTransform(1,0,0,1,0,0)
-            //  ctx.restore();
     }
 
 

@@ -35,7 +35,6 @@ class LineEmitter extends ParticleEmitter{
     place(particle) {
         //place within a line
         this.emitPosition = [this.nextParticlePos,this.lineHeight];
-        //particle.velocity=[0,1];
         particle.position=this.emitPosition;
         this.nextParticlePos+=this.distancePerParticle;
     }

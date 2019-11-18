@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0064be5-a031-4892-8438-364fab1cd028" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/a1-canvas/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a1-canvas/bezierEmitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/bezierEmitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/circleParticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/circleParticle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a1-canvas/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/dragger.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/dragger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a1-canvas/explosionEmitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/explosionEmitter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a1-canvas/particleSystemLine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/explosionParticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/explosionParticle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/lineEmitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/lineEmitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/particle.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/particle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a1-canvas/particlesystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/particlesystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/scene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a1-canvas/squareParticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/a1-canvas/squareParticle.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,151 +24,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/squareParticle.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="8" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#14#51#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/particle.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="17" column="8" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/circleParticle.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/particlesystem.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="682">
-                  <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/dragger.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="243">
-                  <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="608">
-                  <caret line="47" selection-start-line="47" selection-end-line="47" />
-                  <folding>
-                    <element signature="e#1#37#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/explosionEmitter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="483">
-                  <caret line="46" column="88" selection-start-line="46" selection-start-column="88" selection-end-line="46" selection-end-column="88" />
-                  <folding>
-                    <element signature="e#0#51#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/controller.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1176">
-                  <caret line="111" selection-start-line="111" selection-end-line="111" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/scene.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="553">
-                  <caret line="43" column="24" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/explosionParticle.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="753">
-                  <caret line="62" column="68" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="68" />
-                  <folding>
-                    <element signature="e#13#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/bezierEmitter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="573">
-                  <caret line="82" column="15" selection-start-line="82" selection-end-line="83" />
-                  <folding>
-                    <element signature="e#14#42#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/renderer.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a1-canvas/lineEmitter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" column="86" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
-                  <folding>
-                    <element signature="e#0#51#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/a1-canvas/lineEmitter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/a1-canvas/explosionParticle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="57" column="68" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="68" />
+              <folding>
+                <element signature="e#13#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -185,22 +71,22 @@
       <list>
         <option value="$PROJECT_DIR$/a1-canvas/particleSystemLine.js" />
         <option value="$PROJECT_DIR$/a1-canvas/.idea/explosionParticle.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/squareParticle.js" />
         <option value="$PROJECT_DIR$/a1-canvas/Circle.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/renderer.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/scene.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/lineEmitter.js" />
         <option value="$PROJECT_DIR$/a1-canvas/paramtericCurveEmitter.js" />
         <option value="$PROJECT_DIR$/a1-canvas/particleemitter.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/explosionParticle.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/bezierEmitter.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/app.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/dragger.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/particlesystem.js" />
         <option value="$PROJECT_DIR$/a1-canvas/circleParticle.js" />
         <option value="$PROJECT_DIR$/a1-canvas/particle.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/dragger.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/bezierEmitter.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/particlesystem.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/controller.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/squareParticle.js" />
         <option value="$PROJECT_DIR$/a1-canvas/explosionEmitter.js" />
-        <option value="$PROJECT_DIR$/a1-canvas/app.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/controller.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/scene.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/explosionParticle.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/renderer.js" />
+        <option value="$PROJECT_DIR$/a1-canvas/lineEmitter.js" />
       </list>
     </option>
   </component>
@@ -278,12 +164,12 @@
       <workItem from="1572349893269" duration="6270000" />
       <workItem from="1572872594448" duration="3308000" />
       <workItem from="1573156511916" duration="94000" />
-      <workItem from="1573384971346" duration="28929000" />
+      <workItem from="1573384971346" duration="29839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58410000" />
+    <option name="totallyTimeSpent" value="59320000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,6 +182,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13530655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -376,71 +263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/lineEmitter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="86" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/circleParticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/squareParticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <element signature="e#14#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/particle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/explosionParticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="62" column="68" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="68" />
-          <folding>
-            <element signature="e#13#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/dragger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/scene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a1-canvas/particleemitter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -451,23 +273,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#1#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/dragger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a1-canvas/particlesystem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+        <state relative-caret-position="-162">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/circleParticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/particle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/squareParticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#14#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/explosionEmitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/a1-canvas/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        <state relative-caret-position="-42">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/scene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/a1-canvas/bezierEmitter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
+        <state relative-caret-position="1230">
           <caret line="82" column="15" selection-start-line="82" selection-end-line="83" />
           <folding>
             <element signature="e#14#42#0" expanded="true" />
@@ -475,22 +358,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/explosionEmitter.js">
+    <entry file="file://$PROJECT_DIR$/a1-canvas/explosionParticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="46" column="88" selection-start-line="46" selection-start-column="88" selection-end-line="46" selection-end-column="88" />
+        <state relative-caret-position="620">
+          <caret line="57" column="68" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="68" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#13#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a1-canvas/app.js">
+    <entry file="file://$PROJECT_DIR$/a1-canvas/renderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="120">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a1-canvas/lineEmitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
-            <element signature="e#1#37#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

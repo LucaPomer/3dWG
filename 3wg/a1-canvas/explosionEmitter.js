@@ -20,7 +20,6 @@ class ExplosionEmitter extends ParticleEmitter {
     update(particleSystem) {
         super.update(particleSystem);
         this.middle = this.draggers[0].position;
-        //this.draggers[1].position = [this.draggers[0].position[0]+this.radius,this.draggers[0].position[1]+this.radius];
         this.radius =Math.abs(this.middle[0]- this.draggers[1].position[0]);
     }
 
@@ -36,7 +35,6 @@ class ExplosionEmitter extends ParticleEmitter {
         particle.velocity = [this.emitPosition[0] - this.middle[0], this.emitPosition[1] - this.middle[1]];
         particle.position = this.emitPosition;
 
-        //this.nextParticlePos+=this.distancePerParticle;
     }
 
     setDraggers(){
@@ -57,8 +55,6 @@ class ExplosionEmitter extends ParticleEmitter {
 
         context.beginPath();
         context.arc(centerX, centerY, radius+5, 0, 2 * Math.PI, false);
-        //context.fillStyle = 'green';
-        //context.fill();
         context.lineWidth = 2;
         context.strokeStyle = '#0f610c';
         context.stroke();

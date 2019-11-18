@@ -5,6 +5,8 @@ class Renderer {
     constructor(context, bgcolor) {
         this.context = context
         this.bgcolor = bgcolor
+        this.image = new Image(100,100);
+        this.image.src = 'res/space.jpeg';
     }
 
     clear() {
@@ -14,7 +16,8 @@ class Renderer {
         // clear background
         // TODO: improve with gradient or image parameter
         context.fillStyle = this.bgcolor
-        context.fillRect(0, 0, canvas.width, canvas.height)
+       // context.fillRect(0, 0, canvas.width, canvas.height)
+        context.drawImage(this.image,0,0,canvas.width,canvas.height);
     }
 
     render(scene, controller) {

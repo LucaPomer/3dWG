@@ -11,7 +11,6 @@ class SquareParticle extends Particle{
         super(config);
         this.startSize = 1;
         this.endSize = 15;
-        //console.log("super called this,position is " + this.position);
     }
 
 
@@ -34,7 +33,6 @@ class SquareParticle extends Particle{
     }
 
     render(context) {
-        // TODO: use the canvas2d context API for graphics
         if(!this.dead){
             context.fillStyle = `rgb(${this.redness},0,0)`;
             context.fillRect(this.position[0],this.position[1],this.startSize,this.startSize);

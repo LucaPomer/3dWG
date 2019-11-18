@@ -16,20 +16,13 @@ class Particle {
 
 
     init(lifeTime) {
-        //this.position = position
-        //this.velocity = velocity
-        // TODO: initialize life time properties
+        // initialize life time properties
         this.lifeTime = lifeTime;
         this.image.src = 'res/star.png';
     }
 
     update() {
-        // integrate movement properties
-        //this.position[0] += this.velocity[0]
-        //this.position[1] += this.velocity[1]
-        //console.log(this.position);
-
-        // TODO: integrate life time properties
+        // integrate life time properties
         this.currentAge++;
         if (this.currentAge > this.lifeTime) {
             this.dead = true;
@@ -38,7 +31,6 @@ class Particle {
 
 
     render(context) {
-        // TODO: use the canvas2d context API for graphics
         if (!this.dead) {
             //context.fillStyle = "rgb(85,255,94)";
             context.drawImage(this.image,this.position[0],this.position[1],15,15);

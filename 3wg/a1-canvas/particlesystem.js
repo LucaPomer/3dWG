@@ -3,7 +3,6 @@
  */
 class ParticleSystem {
 
-    particleAmount = 10;
 
     constructor(config) {
         this.emitter = config.emitter
@@ -17,7 +16,7 @@ class ParticleSystem {
     }
 
     create() {
-        // TODO: implement particle creation
+        //dont let the particle system take to many particles
         if (this.particles.length < this.maxParticles) {
             let p = new this.particleConstructor({
                 position: [1, 1],
@@ -27,7 +26,6 @@ class ParticleSystem {
             this.emitter.place(p);
             this.particles.push(p);
         }
-        //console.log(this.particles.length);
     }
 
 
@@ -36,6 +34,7 @@ class ParticleSystem {
             particle.render(context)
         }
         //render the dragger lines for the emitter
+        //not every emitter has dragger lines
         if(typeof this.emitter.render === 'function'){
             if (this.debug)
                 this.emitter.render(context);
@@ -49,9 +48,8 @@ class ParticleSystem {
 
         // update the particles
         for (let particle of this.particles) {
+            //delete dead particles
             if (particle.dead == true) {
-                //console.log(this.particles.indexOf(particle));
-                //delete this.particles[this.particles.indexOf(particle)];
                 this.particles.splice(this.particles.indexOf(particle), 1);
             } else {
                 particle.update()

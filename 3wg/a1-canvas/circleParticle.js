@@ -26,9 +26,7 @@ class CircleParticle extends Particle {
 
 
     render(context) {
-        // TODO: use the canvas2d context API for graphics
         if (!this.dead) {
-            context.fillStyle = "rgb(85,255,94)";
             context.drawImage(this.image, this.position[0], this.position[1], 20, 20);
         }
 
