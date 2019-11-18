@@ -19,7 +19,9 @@ class ExplosionEmitter extends ParticleEmitter {
 
     update(particleSystem) {
         super.update(particleSystem);
-        this.middle = this.draggers[0].position
+        this.middle = this.draggers[0].position;
+        //this.draggers[1].position = [this.draggers[0].position[0]+this.radius,this.draggers[0].position[1]+this.radius];
+        this.radius =Math.abs(this.middle[0]- this.draggers[1].position[0]);
     }
 
     emit(particleSystem) {
@@ -41,7 +43,27 @@ class ExplosionEmitter extends ParticleEmitter {
         let dragger = new Dragger({
             positionDragger: this.middle
         })
+        let draggerRadius = new Dragger({
+            positionDragger: [this.middle[0]-this.radius*2, this.middle[1]-this.radius*2]
+        })
         this.draggers.push(dragger);
+        this.draggers.push(draggerRadius);
+    }
+
+    render(context){
+        var centerX = this.middle[0];
+        var centerY = this.middle[1];
+        var radius = this.radius;
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius+5, 0, 2 * Math.PI, false);
+        //context.fillStyle = 'green';
+        //context.fill();
+        context.lineWidth = 2;
+        context.strokeStyle = '#0f610c';
+        context.stroke();
+        context.setTransform(1,0,0,1,0,0);
+
     }
 }
 

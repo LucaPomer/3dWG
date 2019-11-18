@@ -12,6 +12,8 @@ class ParticleSystem {
         this.startSpeed = config.startSpeed;
         this.particles = []
         this.maxParticles = 100;
+
+        this.debug = true
     }
 
     create() {
@@ -33,6 +35,12 @@ class ParticleSystem {
         for (let particle of this.particles) {
             particle.render(context)
         }
+        //render the dragger lines for the emitter
+        if(typeof this.emitter.render === 'function'){
+            if (this.debug)
+                this.emitter.render(context);
+        }
+
     }
 
     update() {
@@ -51,7 +59,6 @@ class ParticleSystem {
 
         }
 
-        // TODO: more logic over the particles if necessary
     }
 
     getDraggers(){
@@ -59,6 +66,10 @@ class ParticleSystem {
 
     }
 
+    //if I am in debug mode i want to render the dragger lines for the emitter
+    setDebug(doit) {
+        this.debug = doit
+    }
 
 }
 

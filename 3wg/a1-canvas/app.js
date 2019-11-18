@@ -30,10 +30,9 @@ window.onload = function() {
         util.fatal('could not create 2D rendering context...')
 
 
-    // green line square
+    // purpel Line
     // create actors for the scene
     let lineEmitter = new LineEmitter({
-        // TODO: emitter properties
         emitAmount:5,
         emitCycle: 200,
         lineLength:100,
@@ -46,22 +45,15 @@ window.onload = function() {
         emitter: lineEmitter,
         particleLifeTime: 100,
         particleConstructor: CircleParticle
-        // TODO: particle system properties (e.g. particle type)
     })
 
-    let particleSystemDraggerTest = new ParticleSystem({
-        emitter: lineEmitter,
-        particleLifeTime: 100,
-        particleConstructor: Particle
-        // TODO: particle system properties (e.g. particle type)
-    })
 
     //flame explosion
     // create actors for the scene
     let explosionEmitter = new ExplosionEmitter({
-        emitAmount: 50,
+        emitAmount: 100,
         emitCycle: 20,
-        radius:5,
+        radius:10,
         middle: [300,300],
 
     })
@@ -69,12 +61,10 @@ window.onload = function() {
         emitter: explosionEmitter,
         particleLifeTime: 50,
         particleConstructor: ExplosionParticle
-        // TODO: particle system properties (e.g. particle type)
     })
 
-    // growing square
+    // growing red square
     let lineEmitter2 = new LineEmitter({
-        // TODO: emitter properties
         emitAmount: 10,
         emitCycle: 20,
         lineLength:300,
@@ -86,13 +76,12 @@ window.onload = function() {
         emitter: lineEmitter2,
         particleLifeTime: 200,
         particleConstructor: SquareParticle
-        // TODO: particle system properties (e.g. particle type)
     })
 
 
     //bezier curve
     let bezierEmitter = new BezierEmitter({
-        // TODO: emitter properties
+        // emitter properties
         emitAmount: 20,
         emitCycle: 8,
         p0: [130.0,100.0],
@@ -106,12 +95,11 @@ window.onload = function() {
         emitter: bezierEmitter,
         particleLifeTime: 10,
         particleConstructor: Particle
-        // TODO: particle system properties (e.g. particle type)
     })
 
     //parametric curve
     let parametricEmitter = new ParametricCurveEmitter({
-        // TODO: emitter properties
+        //emitter properties
         emitAmount: 60,
         emitCycle: 6,
         startPoint : [200,200],
@@ -130,7 +118,6 @@ window.onload = function() {
         emitter: parametricEmitter,
         particleLifeTime: 30,
         particleConstructor: Particle
-        // TODO: particle system properties (e.g. particle type)
     })
 
 
@@ -138,8 +125,7 @@ window.onload = function() {
     let scene = new Scene()
     scene.add([
         particleSystem,
-       // particleSystemDraggerTest,
-         particleExplosion,
+        particleExplosion,
         particleSystemSquare,
         particleSystemBezier,
         particleSystemParametric

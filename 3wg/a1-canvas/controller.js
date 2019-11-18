@@ -2,6 +2,8 @@
 /*
  * Encapsulates interaction responses and head up display things like menus.
  */
+import ParticleSystem from "./particlesystem.js";
+
 class Controller {
 	constructor(context, scene) {
 		this.context = context
@@ -11,8 +13,8 @@ class Controller {
 			pos : [],
 			dxy : []
 		}
-		this.debugModus = true;
-		this.debugModusOn(this.debugModus)
+		this.draggersExsist = false;
+		this.debugModusOn(true)
 
 		this.listen()
 	}
@@ -20,25 +22,36 @@ class Controller {
 	debugModusOn(want){
 		//want the debug modus
 		let actors = this.scene.actors;
-		let collected = []
-		if(want){
+		let collected = [];
+		if(want && !this.draggersExsist){
 			// first only collect
+			console.log("debug on");
 			for (let actor of actors) {
-				//ToDO : is this a particle system ?
-				let draggersToAdd = actor.getDraggers()
-			 	collected = collected.concat(draggersToAdd );
+				if(actor instanceof ParticleSystem){
+					let draggersToAdd = actor.getDraggers();
+			 		collected = collected.concat(draggersToAdd );
+					actor.setDebug(true);
+				}
 
 			}
 			// second add all to scene
 			this.scene.add(collected);
+			//to avois adding the draggers twice
+			this.draggersExsist = true;
 		}
 		else{
+			console.log("debug of");
 			for (let actor of actors) {
-				//ToDO : is this a particle system ?
-				collected = collected.concat( actor.getDraggers());
+				//is this a particle system ?
+				if (actor instanceof ParticleSystem){
+
+					actor.setDebug(false);
+					collected = collected.concat( actor.getDraggers());
+				}
 
 			}
 			this.scene.remove(collected);
+			this.draggersExsist = false;
 		}
 	}
 	
@@ -94,12 +107,14 @@ class Controller {
 
 		canvas.addEventListener('keypress', (event) => {
 			switch (event.code) {
-				case 'KeyP': this.paused =! this.paused; break
+				case 'KeyP': this.paused =! this.paused;
+				case 'KeyD': this.debugModusOn(true);break;
+
 			}
 		}, false)
 	}
 
-	contextPos(event) {
+	 contextPos(event) {
 		// calculate the coordinates relative to the upper left corner
 		let rect = this.context.canvas.getBoundingClientRect();
 		return [
