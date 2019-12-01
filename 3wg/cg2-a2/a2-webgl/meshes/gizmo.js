@@ -17,10 +17,10 @@ let _colors = [
     0.0, 1.0, 0.0, 1.0,
     0.0, 0.0, 1.0, 1.0
 
-]
+];
 
 // three lines from the origin
-//let _indices = []
+let _indices = [0,1,0,2,0,3]
 
 let _mesh = null
 
@@ -33,8 +33,8 @@ class Gizmo {
             _mesh = new Mesh(gl, {
                 coords  : _coords,
                 colors  : _colors,
-                //indices : _indices,
-                primitiveType : gl.POINTS
+                indices : _indices,
+                primitiveType : gl.LINES
             })
 
         this.mesh = _mesh
