@@ -56,13 +56,15 @@ class Mesh {
 		switch (program.name) {
 			
 			case 'color':
-				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer)
+
+				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);
+				if (this.colorsBuffer) program.setAttribute('vertexColor', this.colorsBuffer);
 				break
 			
 			case 'phong_vertex':
 			case 'phong_pixel':
-				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer)
-				if (this.normalsBuffer) program.setAttribute('vertexNormal', this.normalsBuffer)
+				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);
+				if (this.normalsBuffer) program.setAttribute('vertexNormal', this.normalsBuffer);
 				break	
 		}
 
@@ -76,11 +78,12 @@ class Mesh {
 	}
 
 	render() {
-		let gl = this.gl
+		let gl = this.gl;
 		
 		this.indicesBuffer ?
 			gl.drawElements(this.primitiveType, this.indicesBuffer.numElements(), gl.UNSIGNED_SHORT, 0) :
 			gl.drawArrays(this.primitiveType, 0, this.coordsBuffer.numElements())
+
 	}
 }
 

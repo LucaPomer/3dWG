@@ -12,6 +12,10 @@ let _coords = [
 
 // xyz axis colored in rgb
 let _colors = [
+    1.0, 1.0, 1.0, 1.0,
+    1.0, 0.0, 0.0, 1.0,
+    0.0, 1.0, 0.0, 1.0,
+    0.0, 0.0, 1.0, 1.0
 
 ]
 
@@ -28,7 +32,7 @@ class Gizmo {
         if (!_mesh)
             _mesh = new Mesh(gl, {
                 coords  : _coords,
-                //colors  : _colors,
+                colors  : _colors,
                 //indices : _indices,
                 primitiveType : gl.POINTS
             })
