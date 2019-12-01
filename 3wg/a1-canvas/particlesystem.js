@@ -49,7 +49,7 @@ class ParticleSystem {
         // update the particles
         for (let particle of this.particles) {
             //delete dead particles
-            if (particle.dead == true) {
+            if (particle.dead === true) {
                 this.particles.splice(this.particles.indexOf(particle), 1);
             } else {
                 particle.update()

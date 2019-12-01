@@ -24,7 +24,6 @@ class Controller {
         let collected = [];
         if (want && !this.draggersExsist) {
             // first only collect
-            console.log("debug on");
             for (let actor of actors) {
                 if (actor instanceof ParticleSystem) {
                     let draggersToAdd = actor.getDraggers();
@@ -38,7 +37,6 @@ class Controller {
             //to avois adding the draggers twice
             this.draggersExsist = true;
         } else {
-            console.log("debug of");
             for (let actor of actors) {
                 //is this a particle system ?
                 if (actor instanceof ParticleSystem) {

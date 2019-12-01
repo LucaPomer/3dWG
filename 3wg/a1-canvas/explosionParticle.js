@@ -55,7 +55,8 @@ class ExplosionParticle extends Particle{
         ctx.setTransform(1,0,0,1,0,0)
         ctx.translate(this.position[0], this.position[1]);
         ctx.rotate(this.RotationDegree*Math.PI/90);
-        ctx.drawImage(this.image,0,0,this.startSize,this.startSize);
+        let size = this.startSize * 0.5
+        ctx.drawImage(this.image,-size,-size,size,size);
         ctx.setTransform(1,0,0,1,0,0)
     }
 
