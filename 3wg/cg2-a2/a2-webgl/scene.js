@@ -81,12 +81,14 @@ class Scene {
 
 
     update(deltatime) {
-        this.simtime += deltatime
+        this.simtime += deltatime;
+        //console.log("simtime "+Math.sin(this.simtime));
         
         // let the camera roate around the center of the scene
         let distance = 15
         this.camera.lookAt(
-            [distance * Math.sin(this.simtime), 6, distance * Math.cos(this.simtime)],
+       //     [distance * Math.sin(this.simtime), 6, distance * Math.cos(this.simtime)],
+            [distance,6,distance],
             [0,0,0],
             [0,1,0]
         )
@@ -124,8 +126,8 @@ class Scene {
             case 'manip':
                 // TODO
                 //uniforms
-               // program.setUniform('normalMatrix', this.normalMatrix)
-                break
+                program.setUniform('simtime', this.simtime);
+                break;
 
             case 'phong_vertex':
                 program.setUniform('normalMatrix', this.normalMatrix)
