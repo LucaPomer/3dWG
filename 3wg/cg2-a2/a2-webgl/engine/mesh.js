@@ -59,8 +59,12 @@ class Mesh {
 
 				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);
 				if (this.colorsBuffer) program.setAttribute('vertexColor', this.colorsBuffer);
-				break
-			
+				break;
+			case 'manip':
+
+				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);
+				if (this.colorsBuffer) program.setAttribute('vertexColor', this.colorsBuffer);
+				break;
 			case 'phong_vertex':
 			case 'phong_pixel':
 				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);

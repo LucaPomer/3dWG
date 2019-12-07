@@ -71,6 +71,11 @@ class Scene {
                 mesh    : this.gizmo.mesh,
                 program : shaders.getProgram('color')
             }),
+            'manip' : new Model( gl, {
+                mesh : this.parametric.mesh,
+                program : shaders.getProgram('manip')
+
+                })
         }
     }
 
@@ -118,6 +123,8 @@ class Scene {
         switch (program.name) {
             case 'manip':
                 // TODO
+                //uniforms
+               // program.setUniform('normalMatrix', this.normalMatrix)
                 break
 
             case 'phong_vertex':

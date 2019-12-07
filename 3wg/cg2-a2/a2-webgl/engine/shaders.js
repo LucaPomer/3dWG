@@ -5,6 +5,7 @@ import Program from './program.js'
 // define all to be loaded glsl files
 let _shaderPairs = {
     color : { files: ['color.vert', 'color.frag'], codes: ['', ''] },
+    manip : { files: ['manip.vert', 'manip.frag'], codes: ['', ''] },
     phong_vertex : { files: ['phong_vertex.vert', 'phong_vertex.frag'], codes: ['', ''] },
 }
 

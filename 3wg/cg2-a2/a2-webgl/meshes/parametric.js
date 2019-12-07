@@ -31,7 +31,7 @@ class Parametric {
         this.mesh = new Mesh(gl, {
             coords        : coords,
             indices       : indices,
-            primitiveType : gl.LINES
+            primitiveType : gl.POINTS
         })
     }
 }
