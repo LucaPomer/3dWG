@@ -61,7 +61,8 @@ class Scene {
             vSegments: 10,
             // a centered flat plane on the ground
             surface: function(u, v) {
-                return [5 * (u - 0.5), 0, 5 * (v - 0.5)]
+                //return [5 * (u - 0.5), 0, 5 * (v - 0.5)]
+                return[Math.cos(u),Math.cos(v),1*Math.sin(u)*Math.sin(v)]
             }
         })
      

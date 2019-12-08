@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f657321-ff6a-4623-8695-9858baef5dbf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/a2-webgl/meshes/parametric.js" beforeDir="false" afterPath="$PROJECT_DIR$/a2-webgl/meshes/parametric.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a2-webgl/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/a2-webgl/scene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a2-webgl/shaders/manip.frag" beforeDir="false" afterPath="$PROJECT_DIR$/a2-webgl/shaders/manip.frag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a2-webgl/shaders/manip.vert" beforeDir="false" afterPath="$PROJECT_DIR$/a2-webgl/shaders/manip.vert" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,19 +17,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46212766">
+    <splitter split-orientation="horizontal" split-proportion="0.47914892">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/a2-webgl/app.js">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/webgl-debug.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="177">
-                  <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+                <state relative-caret-position="251">
+                  <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -44,8 +41,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/a2-webgl/scene.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="271">
-                  <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+                <state relative-caret-position="295">
+                  <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
                   <folding>
                     <element signature="e#838#916#0" />
                     <element signature="e#1020#1162#0" />
@@ -55,10 +52,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/gizmo.js">
+            <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-584">
-                  <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+                <state relative-caret-position="138">
+                  <caret line="6" column="26" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -66,7 +63,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/a2-webgl/engine/mesh.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-369">
+                <state relative-caret-position="886">
                   <caret line="64" column="71" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="71" />
                   <folding>
                     <element signature="e#0#60#0" expanded="true" />
@@ -85,19 +82,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/parametric.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="648">
-                  <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+                <state relative-caret-position="394">
+                  <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -118,7 +106,7 @@
             <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.frag">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="92">
-                  <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+                  <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
                 </state>
               </provider>
             </entry>
@@ -138,6 +126,7 @@
     <findStrings>
       <find>console.log</find>
       <find>simtime</find>
+      <find>parametric</find>
     </findStrings>
     <replaceStrings>
       <replace>simtime</replace>
@@ -154,10 +143,10 @@
         <option value="$PROJECT_DIR$/a2-webgl/shaders/color.frag" />
         <option value="$PROJECT_DIR$/a2-webgl/engine/mesh.js" />
         <option value="$PROJECT_DIR$/a2-webgl/engine/shaders.js" />
+        <option value="$PROJECT_DIR$/a2-webgl/shaders/manip.vert" />
         <option value="$PROJECT_DIR$/a2-webgl/shaders/manip.frag" />
         <option value="$PROJECT_DIR$/a2-webgl/meshes/parametric.js" />
         <option value="$PROJECT_DIR$/a2-webgl/scene.js" />
-        <option value="$PROJECT_DIR$/a2-webgl/shaders/manip.vert" />
       </list>
     </option>
   </component>
@@ -241,12 +230,12 @@
       <updated>1575215230795</updated>
       <workItem from="1575215233274" duration="1385000" />
       <workItem from="1575216690607" duration="5961000" />
-      <workItem from="1575712662198" duration="11999000" />
+      <workItem from="1575712662198" duration="12954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19345000" />
+    <option name="totallyTimeSpent" value="20300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -325,13 +314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/parametric.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/gizmo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-584">
@@ -339,9 +321,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-355">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/engine/mesh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369">
+        <state relative-caret-position="886">
           <caret line="64" column="71" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="71" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
@@ -354,45 +357,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/webgl-debug.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
+        <state relative-caret-position="-776">
           <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.frag">
+    <entry file="file://$PROJECT_DIR$/a2-webgl/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        <state relative-caret-position="251">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/parametric.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/scene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+        <state relative-caret-position="295">
+          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
           <folding>
             <element signature="e#838#916#0" />
             <element signature="e#1020#1162#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
         </state>
       </provider>
     </entry>

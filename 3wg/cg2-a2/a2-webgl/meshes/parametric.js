@@ -17,6 +17,7 @@ class Parametric {
         for (let v=0; v<=this.vsegm; ++v) {
             // do not push arrays but the bare components into the buffer
             let pos = this.surface(u / this.usegm, v / this.vsegm)
+
             coords.push(pos[0])
             coords.push(pos[1])
             coords.push(pos[2])
