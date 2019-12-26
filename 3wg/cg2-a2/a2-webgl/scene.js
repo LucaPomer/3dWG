@@ -13,6 +13,7 @@ import Sphere from './meshes/sphere.js'
 import Model from './engine/model.js'
 
 import { mat3, mat4 } from '../lib/gl-matrix-1.3.7.js'
+import {vec3} from "../lib/gl-matrix-1.3.7.js";
 
 
 class Scene {
@@ -22,6 +23,7 @@ class Scene {
         // store the WebGL rendering context 
         this.gl = gl  
         this.simtime = 0
+        this.ambientLight = vec3.createFrom(1,0,0); //@me
 
         this.camera = new Camera(gl)
         this.camera.lookAt(
@@ -43,7 +45,7 @@ class Scene {
             ambient   : [0.1,0.1,0.1],
             diffuse   : [1,1,1],
             specular  : [1,1,1],
-            shininess : 4
+            shininess : 4.0
         })
 
         this.projectionMatrix = mat4.create()
@@ -57,14 +59,21 @@ class Scene {
         this.gizmo = new Gizmo(gl)
 
         this.parametric = new Parametric(gl, {
-            uSegments: 10,
-            vSegments: 10,
+            uSegments: 100,
+            vSegments: 100,
             // a centered flat plane on the ground
             surface: function(u, v) {
-                //return [5 * (u - 0.5), 0, 5 * (v - 0.5)]
-                return[Math.cos(u),Math.cos(v),1*Math.sin(u)*Math.sin(v)]
+              //return [5 * (u - 0.5), 0, 5 * (v - 0.5)]
+                return[(5 + 2 *Math.cos(v))* Math.cos(u),(5 + 2 *Math.cos(v))*Math.sin(u),2 *Math.sin(v)]
+
             }
-        })
+        });
+
+        this.sphere = new Sphere(gl,{
+            numLatitudes: 30,
+            numLongitudes: 30,
+            center : vec3.createFrom(0,0,0)
+        });
      
         // add models to the scene
         this.models = {
@@ -72,11 +81,16 @@ class Scene {
                 mesh    : this.gizmo.mesh,
                 program : shaders.getProgram('color')
             }),
-            'manip' : new Model( gl, {
+          /**  'manip' : new Model( gl, {
                 mesh : this.parametric.mesh,
                 program : shaders.getProgram('manip')
 
-                })
+                }),**/
+            'sphere' : new Model(gl,{
+                mesh : this.sphere.mesh,
+                material : this.materials['white'],
+                program: shaders.getProgram('phong_vertex'),
+            })
         }
     }
 
@@ -133,6 +147,9 @@ class Scene {
             case 'phong_vertex':
                 program.setUniform('normalMatrix', this.normalMatrix)
                 // TODO
+            //    program.setUniform('material', this.materials['white']);
+                program.setUniform('light', this.lights[0]);
+                program.setUniform('ambientLight', this.ambientLight);
                 break
         }
     }

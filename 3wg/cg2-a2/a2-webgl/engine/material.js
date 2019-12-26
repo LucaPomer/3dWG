@@ -36,11 +36,11 @@ class Material {
 
 			case 'phong_vertex':
 			case 'phong_pixel':
-				// program.setUniform('material.ambient',   config.ambient)
-				// program.setUniform('material.diffuse',   config.diffuse)
-				// program.setUniform('material.specular',  config.specular)
-				// program.setUniform('material.shininess', config.shininess)
-				break
+				 program.setUniform('material.ambient',   config.ambient);
+				 program.setUniform('material.diffuse',   config.diffuse);
+				 program.setUniform('material.specular',  config.specular);
+				 program.setUniform('material.shininess', config.shininess);
+				break;
 		}
 	}
 }
