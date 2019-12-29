@@ -148,7 +148,9 @@ class Scene {
                 program.setUniform('normalMatrix', this.normalMatrix)
                 // TODO
             //    program.setUniform('material', this.materials['white']);
-                program.setUniform('light', this.lights[0]);
+             //   program.setUniform('light', this.lights[0]);
+                program.setUniform('lightColor',this.lights[0].color);
+                program.setUniform('lightPosition',this.lights[0].position );
                 program.setUniform('ambientLight', this.ambientLight);
                 break
         }

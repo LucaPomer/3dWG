@@ -25,6 +25,8 @@ struct Light {
 	vec3 color;
 } ;
 uniform Light light;
+uniform vec3 lightColor;
+uniform vec4 lightPosition;
 
 //ambientes licht
 uniform vec3 ambientLight;
@@ -52,12 +54,12 @@ void main() {
 	vec3 ecPosition = (modelViewMatrix * vec4(vertexPosition, 1.0)).xyz;
 	vec3 ecNormal   = normalize(normalMatrix * vertexNormal);
 
-	vec3 ecLightPosition = (modelViewMatrix * light.position).xyz;
+	vec3 ecLightPosition = (modelViewMatrix * lightPosition).xyz;
 	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
-	color = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
+	color = phong(ecPosition, viewDir, ecNormal, ecLightPosition, lightColor);
 
 
-	//color = light.color;
+//	color = lightColor;
 
 	gl_Position  = projectionMatrix * vec4(ecPosition, 1.0);
 }
