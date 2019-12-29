@@ -35,8 +35,8 @@ class Scene {
         this.lights = []
         // a light
         this.lights[0] = new Light(gl, {
-            position : [10,5,10,1],
-            color    : [1,1,1]
+            position : [50,10,10,1],
+            color    : [1,0.5,1]
         })
 
         this.materials = {}
@@ -91,6 +91,14 @@ class Scene {
                 material : this.materials['white'],
                 program: shaders.getProgram('phong_vertex'),
               // light: this.lights[0],
+            }),
+            'spherePixel' : new Model(gl,{
+
+                mesh : this.sphere.mesh,
+                material : this.materials['white'],
+                program: shaders.getProgram('phong_pixel'),
+                transform: mat4.translate(mat4.identity(), vec3.createFrom(0,3,0)),
+                // light: this.lights[0],
             })
         }
     }
@@ -144,7 +152,7 @@ class Scene {
                 //uniforms
                 program.setUniform('simtime', this.simtime);
                 break;
-
+            case 'phong_pixel':
             case 'phong_vertex':
                 program.setUniform('normalMatrix', this.normalMatrix)
                 // TODO

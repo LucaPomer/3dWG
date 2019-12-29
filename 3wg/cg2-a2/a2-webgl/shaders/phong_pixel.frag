@@ -1,22 +1,16 @@
-
 uniform mat4 projectionMatrix;
-uniform mat4 modelViewMatrix;
-uniform mat3 normalMatrix;
 
-attribute vec3 vertexPosition;
-attribute vec3 vertexNormal;
-
-varying vec3 color;
+varying vec3 ecPosition;
+varying vec3 ecNormal;
+varying vec3 ecLightPosition;
 
 //material
-
 struct Material {
 	vec3 ambient;
 	vec3 diffuse;
 	vec3 specular;
 	float shininess;
 };
-
 uniform Material material;
 
 //lichtquellen
@@ -44,20 +38,12 @@ vec3 phong(vec3 p, vec3 v, vec3 n, vec3 lp, vec3 lc) {
 	vec3 spec = material.specular *
 	pow(rdotv, material.shininess) * lc;
 	return ambi + diff + spec;
-	//return ambi;
+	//return ecNormal;
 }
 void main() {
 
-	//ec = eye coordinates
-	vec3 ecPosition = (modelViewMatrix * vec4(vertexPosition, 1.0)).xyz;
-	vec3 ecNormal   = normalize(normalMatrix * vertexNormal);
-
-	vec3 ecLightPosition = (modelViewMatrix * light.position).xyz;
 	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
-	color = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
-
-
-	//color = ecNormal;
-
-	gl_Position  = projectionMatrix * vec4(ecPosition, 1.0);
+	vec3 color = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
+	//gl_FragColor = vec4(color, 1.0);
+	gl_FragColor = vec4(color, 1.0);
 }
