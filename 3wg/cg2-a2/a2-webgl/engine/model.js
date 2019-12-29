@@ -28,6 +28,7 @@ class Model {
 		if (this.material) {
 			this.material.bind(program)
 		}
+
 		this.mesh.bind(program)
 		this.mesh.render()
 		this.mesh.unbind(program)

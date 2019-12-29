@@ -23,7 +23,7 @@ class Scene {
         // store the WebGL rendering context 
         this.gl = gl  
         this.simtime = 0
-        this.ambientLight = vec3.createFrom(1,0,0); //@me
+        this.ambientLight = vec3.createFrom(0,0,1); //@me
 
         this.camera = new Camera(gl)
         this.camera.lookAt(
@@ -90,6 +90,7 @@ class Scene {
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
                 program: shaders.getProgram('phong_vertex'),
+              // light: this.lights[0],
             })
         }
     }
@@ -149,8 +150,7 @@ class Scene {
                 // TODO
             //    program.setUniform('material', this.materials['white']);
              //   program.setUniform('light', this.lights[0]);
-                program.setUniform('lightColor',this.lights[0].color);
-                program.setUniform('lightPosition',this.lights[0].position );
+                this.lights[0].bind(program);
                 program.setUniform('ambientLight', this.ambientLight);
                 break
         }
