@@ -14,6 +14,7 @@ import Model from './engine/model.js'
 
 import { mat3, mat4 } from '../lib/gl-matrix-1.3.7.js'
 import {vec3} from "../lib/gl-matrix-1.3.7.js";
+import Texture from "./engine/texture.js";
 
 
 class Scene {
@@ -21,9 +22,10 @@ class Scene {
     constructor(gl) {
 
         // store the WebGL rendering context 
-        this.gl = gl  
-        this.simtime = 0
+        this.gl = gl ;
+        this.simtime = 0;
         this.ambientLight = vec3.createFrom(0,0,1); //@me
+       // this.textures = textures;
 
         this.camera = new Camera(gl)
         this.camera.lookAt(
@@ -32,21 +34,22 @@ class Scene {
             [0, 1, 0]
         )
 
-        this.lights = []
+        this.lights = [];
         // a light
         this.lights[0] = new Light(gl, {
             position : [50,10,10,1],
-            color    : [1,0.5,1]
-        })
+            color    : [1,1,1]
+        });
 
-        this.materials = {}
+        this.materials = {};
         // a material
         this.materials['white'] = new Material(gl, {
             ambient   : [0.1,0.1,0.1],
             diffuse   : [1,1,1],
             specular  : [1,1,1],
             shininess : 4.0
-        })
+        });
+
 
         this.projectionMatrix = mat4.create()
         this.viewMatrix       = mat4.create()
@@ -99,7 +102,13 @@ class Scene {
                 program: shaders.getProgram('phong_pixel'),
                 transform: mat4.translate(mat4.identity(), vec3.createFrom(0,3,0)),
                 // light: this.lights[0],
-            })
+            }),
+            'sphereEarth' : new Model(gl,{
+                mesh : this.sphere.mesh,
+                material : this.materials['white'],
+                program: shaders.getProgram('earth'),
+                transform: mat4.translate(mat4.identity(), vec3.createFrom(0,6,0)),
+            }),
         }
     }
 
@@ -154,13 +163,12 @@ class Scene {
                 break;
             case 'phong_pixel':
             case 'phong_vertex':
+            case 'earth':
                 program.setUniform('normalMatrix', this.normalMatrix)
-                // TODO
-            //    program.setUniform('material', this.materials['white']);
-             //   program.setUniform('light', this.lights[0]);
                 this.lights[0].bind(program);
                 program.setUniform('ambientLight', this.ambientLight);
-                break
+                break;
+
         }
     }
 }

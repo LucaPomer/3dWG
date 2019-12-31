@@ -1,4 +1,5 @@
 import Texture from './texture.js'
+import textures from "./textures.js";
 
 let _defaultTexture = null
 
@@ -41,6 +42,14 @@ class Material {
 				 program.setUniform('material.specular',  config.specular);
 				 program.setUniform('material.shininess', config.shininess);
 				break;
+			case 'earth':
+				program.setUniform('material.ambient',   config.ambient);
+				program.setUniform('material.diffuse',   config.diffuse);
+				program.setUniform('material.specular',  config.specular);
+				program.setUniform('material.shininess', config.shininess);
+
+				program.setTexture('earthDayTex', 0, textures.getTexture("earthDay"));
+				program.setTexture('earthCloudTex', 1, textures.getTexture("earthCloud"));
 		}
 	}
 }

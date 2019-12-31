@@ -69,7 +69,13 @@ class Mesh {
 			case 'phong_pixel':
 				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);
 				if (this.normalsBuffer) program.setAttribute('vertexNormal', this.normalsBuffer);
-				break	
+				break;
+			case 'earth':
+				if (this.coordsBuffer) program.setAttribute('vertexPosition', this.coordsBuffer);
+				if (this.normalsBuffer) program.setAttribute('vertexNormal', this.normalsBuffer);
+				if (this.texcoordsBuffer) program.setAttribute('vertexTexcoords', this.texcoordsBuffer);
+				break;
+
 		}
 
 		this.indicesBuffer ?

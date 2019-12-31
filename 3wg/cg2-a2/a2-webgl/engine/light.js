@@ -21,6 +21,7 @@ class Light {
 				break;
 			case 'phong_vertex':
 			case 'phong_pixel':
+			case 'earth':
 				program.setUniform('light.color',   config.color);
 				program.setUniform('light.position',   config.position);
 				break;
