@@ -52,6 +52,6 @@ void main() {
 	vec3 texColorWorld = texture2D(earthDayTex, texcoords).rgb;
 	vec3 texColorClouds = texture2D(earthCloudTex, texcoords).rgb;
 	vec3 colorTex = 0.5*(texColorWorld+texColorClouds);
-	vec3 colorWithLight = 0.1*colorLight+0.9*colorTex;
+	vec3 colorWithLight = colorLight*colorTex;
 	gl_FragColor = vec4(colorWithLight, 1.0);
 }
