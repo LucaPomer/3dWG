@@ -2,6 +2,7 @@
 uniform mat4 projectionMatrix;
 uniform mat4 modelViewMatrix;
 uniform mat3 normalMatrix;
+uniform mat4 viewMatrix;
 
 attribute vec3 vertexPosition;
 attribute vec3 vertexNormal;
@@ -40,7 +41,7 @@ void main() {
 	 ecPosition = (modelViewMatrix * vec4(vertexPosition, 1.0)).xyz;
 	ecNormal = normalize(normalMatrix * vertexNormal);
 	//ecNormal =vertexNormal;
-	 ecLightPosition = (modelViewMatrix * light.position).xyz;
+	 ecLightPosition = (viewMatrix * light.position).xyz;
 
 //	color = lightColor;
 	texcoords = vertexTexcoords;//hand over textcoords to fragment shader

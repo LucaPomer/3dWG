@@ -50,6 +50,8 @@ class Material {
 
 				program.setTexture('earthDayTex', 0, textures.getTexture("earthDay"));
 				program.setTexture('earthCloudTex', 1, textures.getTexture("earthCloud"));
+				program.setTexture('earthNightTex',2,textures.getTexture("earthNight"));
+				program.setTexture('earthWaterTex',3,textures.getTexture("earthWater"));
 		}
 	}
 }

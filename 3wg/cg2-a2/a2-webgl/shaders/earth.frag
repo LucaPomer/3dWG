@@ -1,6 +1,8 @@
 uniform mat4 projectionMatrix;
 uniform sampler2D earthDayTex;
 uniform sampler2D earthCloudTex;
+uniform sampler2D earthNightTex;
+uniform sampler2D earthWaterTex;
 
 varying vec3 ecPosition;
 varying vec3 ecNormal;
@@ -45,13 +47,37 @@ vec3 phong(vec3 p, vec3 v, vec3 n, vec3 lp, vec3 lc) {
 }
 void main() {
 
-	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
-	vec3 colorLight = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
-	//gl_FragColor = vec4(color, 1.0);
 
 	vec3 texColorWorld = texture2D(earthDayTex, texcoords).rgb;
 	vec3 texColorClouds = texture2D(earthCloudTex, texcoords).rgb;
+	vec3 texColorNight = texture2D(earthNightTex, texcoords).rgb;
+	vec3 texWater = texture2D(earthWaterTex, texcoords).rgb;
+	//land
+	if(texWater.x==0.0){
+
+	}
+	//water
+	else{
+
+	}
+	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
+	vec3 colorLight = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
+
+
 	vec3 colorTex = 0.5*(texColorWorld+texColorClouds);
-	vec3 colorWithLight = colorLight*colorTex;
-	gl_FragColor = vec4(colorWithLight, 1.0);
+	//vec3 colorWithLight = (colorLight*colorTex).xyz;
+
+	vec3 normalizedLight = normalize(ecLightPosition);
+	float cos_angle = dot(normalizedLight, ecNormal);
+
+	cos_angle = max(-1.0, cos_angle);
+	cos_angle = min(1.0, cos_angle);
+
+	vec3 colorNightMix = mix(texColorNight,texColorWorld,cos_angle);
+	vec3 colorWithLight = mix(colorLight,colorNightMix,0.8);
+	//land
+
+		gl_FragColor = vec4(colorWithLight, 1.0);
+
+
 }

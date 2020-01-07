@@ -2,6 +2,7 @@
 uniform mat4 projectionMatrix;
 uniform mat4 modelViewMatrix;
 uniform mat3 normalMatrix;
+uniform mat4 viewMatrix;
 
 attribute vec3 vertexPosition;
 attribute vec3 vertexNormal;
@@ -52,7 +53,7 @@ void main() {
 	vec3 ecPosition = (modelViewMatrix * vec4(vertexPosition, 1.0)).xyz;
 	vec3 ecNormal   = normalize(normalMatrix * vertexNormal);
 
-	vec3 ecLightPosition = (modelViewMatrix * light.position).xyz;
+	vec3 ecLightPosition = (viewMatrix * light.position).xyz;
 	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
 	color = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
 

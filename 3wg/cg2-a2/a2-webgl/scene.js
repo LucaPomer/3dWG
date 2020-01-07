@@ -107,7 +107,8 @@ class Scene {
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
                 program: shaders.getProgram('earth'),
-                transform: mat4.translate(mat4.identity(), vec3.createFrom(0,6,0)),
+                transform:mat4.scale(mat4.identity(),vec3.createFrom(3,3,3)),
+                    //* mat4.translate(mat4.identity(), vec3.createFrom(0,6,0)),
             }),
         }
     }
@@ -164,6 +165,7 @@ class Scene {
             case 'phong_pixel':
             case 'phong_vertex':
             case 'earth':
+                program.setUniform('viewMatrix', this.viewMatrix);
                 program.setUniform('normalMatrix', this.normalMatrix)
                 this.lights[0].bind(program);
                 program.setUniform('ambientLight', this.ambientLight);
