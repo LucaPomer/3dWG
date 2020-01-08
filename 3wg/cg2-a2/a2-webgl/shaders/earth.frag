@@ -52,14 +52,8 @@ void main() {
 	vec3 texColorClouds = texture2D(earthCloudTex, texcoords).rgb;
 	vec3 texColorNight = texture2D(earthNightTex, texcoords).rgb;
 	vec3 texWater = texture2D(earthWaterTex, texcoords).rgb;
-	//land
-	if(texWater.x==0.0){
+	float shininess;
 
-	}
-	//water
-	else{
-
-	}
 	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
 	vec3 colorLight = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
 
@@ -74,7 +68,16 @@ void main() {
 	cos_angle = min(1.0, cos_angle);
 
 	vec3 colorNightMix = mix(texColorNight,texColorWorld,cos_angle);
-	vec3 colorWithLight = mix(colorLight,colorNightMix,0.8);
+	vec3 colorWithLight;
+	//land
+	if(texWater.x!=0.0){
+		colorWithLight  = mix(colorLight,colorNightMix,0.8);
+	}
+	//water
+	else{
+		colorWithLight  = mix(colorLight,colorNightMix,1.0);
+	}
+
 	//land
 
 		gl_FragColor = vec4(colorWithLight, 1.0);

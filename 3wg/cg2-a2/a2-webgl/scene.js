@@ -40,6 +40,10 @@ class Scene {
             position : [50,10,10,1],
             color    : [1,1,1]
         });
+        this.lights[1] = new Light(gl, {
+            position : [50,10,10,1],
+            color    : [1,1,1]
+        });
 
         this.materials = {};
         // a material
@@ -93,6 +97,7 @@ class Scene {
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
                 program: shaders.getProgram('phong_vertex'),
+              transform:mat4.multiply(mat4.translate(mat4.identity(), vec3.createFrom(-10,3,0)),mat4.scale(mat4.identity(),vec3.createFrom(3,3,3)) ),
               // light: this.lights[0],
             }),
             'spherePixel' : new Model(gl,{
@@ -100,14 +105,14 @@ class Scene {
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
                 program: shaders.getProgram('phong_pixel'),
-                transform: mat4.translate(mat4.identity(), vec3.createFrom(0,3,0)),
+                transform:mat4.multiply(mat4.translate(mat4.identity(), vec3.createFrom(-15,-5,0)),mat4.scale(mat4.identity(),vec3.createFrom(3,3,3)),)
                 // light: this.lights[0],
             }),
             'sphereEarth' : new Model(gl,{
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
                 program: shaders.getProgram('earth'),
-                transform:mat4.scale(mat4.identity(),vec3.createFrom(3,3,3)),
+                transform:mat4.scale(mat4.identity(),vec3.createFrom(5,5,5)),
                     //* mat4.translate(mat4.identity(), vec3.createFrom(0,6,0)),
             }),
         }
@@ -121,11 +126,13 @@ class Scene {
         // let the camera roate around the center of the scene
         let distance = 15
         this.camera.lookAt(
-       //     [distance * Math.sin(this.simtime), 6, distance * Math.cos(this.simtime)],
+         //  [distance * Math.sin(this.simtime), 6, distance * Math.cos(this.simtime)],
             [distance,6,distance],
             [0,0,0],
             [0,1,0]
         )
+        this.models.sphereEarth.transform =
+        mat4.multiply(mat4.rotate(mat4.identity(),this.simtime,vec3.createFrom(0,1,0)),mat4.scale(mat4.identity(),vec3.createFrom(5,5,5)))
     }
     
     render() {
@@ -163,6 +170,7 @@ class Scene {
                 program.setUniform('simtime', this.simtime);
                 break;
             case 'phong_pixel':
+                //this.lights[1].bind(program);
             case 'phong_vertex':
             case 'earth':
                 program.setUniform('viewMatrix', this.viewMatrix);

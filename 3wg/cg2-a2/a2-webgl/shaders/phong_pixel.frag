@@ -4,6 +4,7 @@ varying vec3 ecPosition;
 varying vec3 ecNormal;
 varying vec3 ecLightPosition;
 
+
 //material
 struct Material {
 	vec3 ambient;
@@ -38,7 +39,7 @@ vec3 phong(vec3 p, vec3 v, vec3 n, vec3 lp, vec3 lc) {
 	vec3 spec = material.specular *
 	pow(rdotv, material.shininess) * lc;
 	return ambi + diff + spec;
-	//return ecNormal;
+	///return ambientLight;
 }
 void main() {
 
