@@ -17,9 +17,11 @@ window.onload = function() {
 
     // create a camera
     let camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-   camera.position.z = 15;
-    camera.position.y = 5;
+   //camera.position.z = 15;
+    camera.position.y = 15;
     let radius = 10
+
+
 
     // setup simulation
     let delta = 1 / 60
@@ -66,6 +68,15 @@ window.onload = function() {
     groupJupiter.add(jupiter);
     sun.add( groupJupiter );
 
+    //alternative camrea
+    let cameraJupiter = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    let vecJupiter = new THREE.Vector3(0,0,0);
+    var groupJupiterCamera = new THREE.Group();
+    groupJupiterCamera.add(cameraJupiter);
+    jupiter.add(groupJupiterCamera);
+    cameraJupiter.translateZ(4);
+    cameraJupiter.translateY(2);
+
     //moon
     var moonGeometry = new THREE.SphereGeometry( 0.2, 20, 20 );
     var materialMoon = new THREE.MeshLambertMaterial( {color: 0x818E8E} );
@@ -77,26 +88,44 @@ window.onload = function() {
 
 
 
-
+let camreaTorender = camera;
     let update = function() {
         time += delta
       groupEarth.rotation.y += 0.01;
         groupMoon.rotation.y += 0.03;
         groupJupiter.rotation.y += 0.007;
+        groupJupiterCamera.rotation.y += 0.003;
 
-
+        jupiter.getWorldPosition(vecJupiter);
+        cameraJupiter.lookAt(vecJupiter);
 
         //camera.position.x = radius * Math.sin(time)
        // camera.position.z = radius * Math.cos(time)
         camera.lookAt(new THREE.Vector3(0, 0, 0))
     }
 
+    let mainCamera = true;
+    document.addEventListener("keydown", onDocumentKeyDown, false);
+    function onDocumentKeyDown(event) {
+        var keyCode = event.which;
+        if(keyCode===32){
+            if(mainCamera){
+                camreaTorender = cameraJupiter;
+                mainCamera=false;
+            }
+            else{
+                camreaTorender=camera;
+                mainCamera=true;
+            }
+
+        }
+    }
     // simulation loop
     let render = function() {
         requestAnimationFrame(render)
         
         update()
-        renderer.render(scene, camera)
+        renderer.render(scene, camreaTorender)
     }
 
     // go
