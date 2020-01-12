@@ -69,7 +69,7 @@ window.onload = function() {
     sun.add( groupJupiter );
 
     //alternative camrea
-    let cameraJupiter = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    let cameraJupiter = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 200 );
     let vecJupiter = new THREE.Vector3(0,0,0);
     var groupJupiterCamera = new THREE.Group();
     groupJupiterCamera.add(cameraJupiter);
@@ -86,6 +86,19 @@ window.onload = function() {
     groupMoon.add(moon);
     earth.add(groupMoon);
 
+    //skydome
+    const loader = new THREE.TextureLoader();
+    const bgTexture = loader.load('textures/eso0932a.jpg');
+    scene.background = bgTexture;
+
+   var textureSky = new THREE.TextureLoader().load( 'textures/eso0932a.jpg' );
+    var skydomeGeometry = new THREE.SphereGeometry( 1000, 20, 20 );
+    var materialSky = new THREE.MeshBasicMaterial( { map: textureSky } );
+    materialSky.side=(THREE.BackSide);
+    var sky = new THREE.Mesh( skydomeGeometry, materialSky );
+    scene.add(sky);
+
+
 
 
 let camreaTorender = camera;
@@ -94,7 +107,7 @@ let camreaTorender = camera;
       groupEarth.rotation.y += 0.01;
         groupMoon.rotation.y += 0.03;
         groupJupiter.rotation.y += 0.007;
-        groupJupiterCamera.rotation.y += 0.003;
+       // groupJupiterCamera.rotation.y += 0.003;
 
         jupiter.getWorldPosition(vecJupiter);
         cameraJupiter.lookAt(vecJupiter);

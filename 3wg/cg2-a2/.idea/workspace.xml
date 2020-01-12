@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f657321-ff6a-4623-8695-9858baef5dbf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../a1-canvas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1-canvas/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../a3-threejs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a3-threejs/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../a3-threejs/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../a3-threejs/app.js" afterDir="false" />
     </list>
@@ -300,12 +299,12 @@
       <workItem from="1578411607356" duration="6296000" />
       <workItem from="1578511470701" duration="4802000" />
       <workItem from="1578660976157" duration="192000" />
-      <workItem from="1578852974785" duration="592000" />
+      <workItem from="1578852974785" duration="939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69027000" />
+    <option name="totallyTimeSpent" value="69374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
