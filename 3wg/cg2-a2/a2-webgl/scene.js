@@ -87,13 +87,15 @@ class Scene {
             'gizmo' : new Model(gl, {
                 mesh    : this.gizmo.mesh,
                 program : shaders.getProgram('color')
-            }),
-          /**  'manip' : new Model( gl, {
+            }),/**
+             //-----Aufgabe 2.1 ----//
+         'manip' : new Model( gl, {
                 mesh : this.parametric.mesh,
                 program : shaders.getProgram('manip')
 
-                }),**/
-            'sphere' : new Model(gl,{
+                }),
+             **/
+          'sphere' : new Model(gl,{
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
                 program: shaders.getProgram('phong_vertex'),
@@ -132,7 +134,7 @@ class Scene {
             [0,1,0]
         )
         this.models.sphereEarth.transform =
-        mat4.multiply(mat4.rotate(mat4.identity(),this.simtime,vec3.createFrom(0,1,0)),mat4.scale(mat4.identity(),vec3.createFrom(5,5,5)))
+       mat4.multiply(mat4.rotate(mat4.identity(),this.simtime,vec3.createFrom(0,1,0)),mat4.scale(mat4.identity(),vec3.createFrom(5,5,5)))
     }
     
     render() {

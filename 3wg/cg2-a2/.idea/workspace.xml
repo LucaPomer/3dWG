@@ -4,6 +4,8 @@
     <list default="true" id="3f657321-ff6a-4623-8695-9858baef5dbf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../a3-threejs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a3-threejs/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../a3-threejs/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../a3-threejs/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a2-webgl/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/a2-webgl/scene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cg2-a3-threejs.zip" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +20,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.61157715">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/a2-webgl/scene.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="828">
-                  <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+                <state relative-caret-position="215">
+                  <caret line="92" column="38" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="38" />
                   <folding>
                     <element signature="e#1#42#0" expanded="true" />
                   </folding>
@@ -31,10 +33,28 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/a2-webgl/engine/model.js">
+            <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/parametric.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="30" selection-start-line="30" selection-end-line="30" />
+                <state relative-caret-position="240">
+                  <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.frag">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="92">
+                  <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="184">
+                  <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -71,11 +91,11 @@
               <provider selected="true" editor-type-id="images" />
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/a2-webgl/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
-                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                <state relative-caret-position="368">
+                  <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -83,7 +103,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.frag">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="920">
+                <state relative-caret-position="617">
                   <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
                 </state>
               </provider>
@@ -120,7 +140,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.vert">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
+                <state relative-caret-position="548">
                   <caret line="34" selection-start-line="34" selection-end-line="34" />
                 </state>
               </provider>
@@ -237,15 +257,15 @@
         <option value="$PROJECT_DIR$/a2-webgl/engine/material.js" />
         <option value="$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.vert" />
         <option value="$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.frag" />
-        <option value="$PROJECT_DIR$/a2-webgl/scene.js" />
         <option value="$PROJECT_DIR$/a2-webgl/shaders/earth.frag" />
         <option value="$PROJECT_DIR$/a2-webgl/controller.js" />
+        <option value="$PROJECT_DIR$/a2-webgl/scene.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -254,7 +274,37 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cg2-a2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cg2-a2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cg2-a2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cg2-a2" type="462c0819:PsiDirectoryNode" />
+              <item name="a2-webgl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cg2-a2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cg2-a2" type="462c0819:PsiDirectoryNode" />
+              <item name="a2-webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="meshes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cg2-a2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cg2-a2" type="462c0819:PsiDirectoryNode" />
+              <item name="a2-webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="shaders" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -299,18 +349,18 @@
       <workItem from="1578411607356" duration="6296000" />
       <workItem from="1578511470701" duration="4802000" />
       <workItem from="1578660976157" duration="192000" />
-      <workItem from="1578852974785" duration="939000" />
+      <workItem from="1578852974785" duration="2504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69374000" />
+    <option name="totallyTimeSpent" value="70939000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15997182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15997182" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -387,27 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/parametric.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/engine/program.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4554">
@@ -468,16 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/scene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="e#1#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/engine/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
@@ -494,13 +513,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/textures/earth_topography.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/engine/material.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -555,7 +567,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.vert">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="548">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
@@ -576,8 +588,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/a2-webgl/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="368">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/phong_pixel.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/shaders/manip.vert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/meshes/parametric.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a2-webgl/scene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="38" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
