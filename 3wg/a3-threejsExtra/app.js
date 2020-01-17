@@ -20,7 +20,7 @@ window.onload = function() {
 
     // create a camera
     let camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-   camera.position.z = 15;
+   camera.position.z = 27;
     camera.position.y = 2;
     let radius = 10
 
@@ -48,13 +48,12 @@ window.onload = function() {
     var material = new THREE.MeshLambertMaterial( { color: 0x11B2D4 } );
     var planet = new THREE.Mesh( sphereGeometry, material );
     planet.receiveShadow = true;
-    planet.rotateY(1.4);
    //sun.castShadow = true;
-    //scene.add( planet );
+    scene.add( planet );
 
     //tree
     let treeCrown = new THREE.Group();
-    let tree = new THREE.Group();
+    let treeGroup = new THREE.Group();
     var geometry = new THREE.ConeGeometry(3, 3, 5 );
     var material = new THREE.MeshLambertMaterial( {color: 0x11D4B2} );
     var cone = new THREE.Mesh( geometry, material );
@@ -69,7 +68,7 @@ window.onload = function() {
    treeCrown.add( cone3 );
     treeCrown.add( cone4 );
 treeCrown.position.y = 2;
-    tree.add(treeCrown);
+    treeGroup.add(treeCrown);
 
     //tree stamp
     let treeStamp = new THREE.Group();
@@ -78,9 +77,17 @@ treeCrown.position.y = 2;
      var stamp = new THREE.Mesh( geometry, material );
      treeStamp.add(stamp);
 
-     tree.add( treeStamp );
-     tree.position.y = 2;
-     scene.add(tree);
+     treeGroup.add( treeStamp );
+     treeGroup.position.y = 10;
+     treeGroup.scale.set(0.4,0.4,0.4);
+     let tree2 = treeGroup.clone();
+    let tree2Group = new THREE.Group();
+    tree2Group.add(tree2);
+    tree2Group.rotation.z += 0.7;
+
+
+     scene.add(treeGroup);
+     scene.add(tree2Group);
 
 /**    //sunLIght
     var light = new THREE.PointLight( 0xFFFFFF, 1, 8000 );

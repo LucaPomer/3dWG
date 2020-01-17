@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03f163fc-f8de-4efa-8371-b6b8b1e4d2d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../a3-threejs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a3-threejs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../a3-threejs/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../a3-threejs/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cg2-a2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cg2-a2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cg2-a2/a2-webgl/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/../cg2-a2/a2-webgl/scene.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cg2-a2/a2-webgl/shaders/earth.frag" beforeDir="false" afterPath="$PROJECT_DIR$/../cg2-a2/a2-webgl/shaders/earth.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cg2-a2Pomer.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../cg2-a2Pomer.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="81" column="25" lean-forward="true" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+            <state relative-caret-position="266">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -104,12 +99,12 @@
       <workItem from="1578661170415" duration="1627000" />
       <workItem from="1578664409872" duration="697000" />
       <workItem from="1578665498464" duration="15739000" />
-      <workItem from="1579260802577" duration="3507000" />
+      <workItem from="1579260802577" duration="5795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21570000" />
+    <option name="totallyTimeSpent" value="23858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -153,8 +148,8 @@
     <entry file="file://$PROJECT_DIR$/node_modules/three/build/three.js" />
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="81" column="25" lean-forward="true" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        <state relative-caret-position="266">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
