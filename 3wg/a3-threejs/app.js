@@ -38,8 +38,8 @@ window.onload = function() {
     cube.position.set(5,5,5);
     scene.add( cube );**/
 //light globe
-    var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-   // scene.add( light );
+    var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.2 );
+   scene.add( light );
 
 
     //SUN
@@ -52,7 +52,7 @@ window.onload = function() {
     scene.add( sun );
 
     //sunLIght
-    var light = new THREE.PointLight( 0xFFFFFF, 1, 5000 );
+    var light = new THREE.PointLight( 0xFFFFFF, 1, 8000 );
     light.position.set( 0, 0, 0 );
     light.castShadow = true;
     light.shadowDarkness = 0.5;

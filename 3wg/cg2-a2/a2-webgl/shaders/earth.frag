@@ -28,7 +28,7 @@ uniform Light light;
 //ambientes licht
 uniform vec3 ambientLight;
 
-vec3 phong(vec3 p, vec3 v, vec3 n, vec3 lp, vec3 lc) {
+vec3 phong(vec3 p, vec3 v, vec3 n, vec3 lp, vec3 lc , vec3 specular) {
 	// derived vectors
 	vec3 toLight = normalize(lp - p);
 	vec3 reflectLight = reflect(-toLight, n);
@@ -40,7 +40,7 @@ vec3 phong(vec3 p, vec3 v, vec3 n, vec3 lp, vec3 lc) {
 	// phong sum
 	vec3 ambi = material.ambient * ambientLight;
 	vec3 diff = material.diffuse * ndots * lc;
-	vec3 spec = material.specular *
+	vec3 spec = specular *
 	pow(rdotv, material.shininess) * lc;
 	return ambi + diff + spec;
 	//return spec;
@@ -55,7 +55,17 @@ void main() {
 	float shininess;
 
 	vec3 viewDir = projectionMatrix[2][3] == 0.0 ? vec3(0, 0, 1) : normalize(-ecPosition);
-	vec3 colorLight = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color);
+	vec3 colorLight;
+	//land
+	if(texWater.x!=0.0){
+		colorLight = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color, vec3(1,1,1));
+	}
+	//water
+	else {
+		colorLight = phong(ecPosition, viewDir, ecNormal, ecLightPosition, light.color, vec3(0,0,0));
+	}
+
+
 
 
 	vec3 colorTex = 0.5*(texColorWorld+texColorClouds);
@@ -64,21 +74,19 @@ void main() {
 	vec3 normalizedLight = normalize(ecLightPosition);
 	float cos_angle = dot(normalizedLight, ecNormal);
 
-	cos_angle = max(-1.0, cos_angle);
-	cos_angle = min(1.0, cos_angle);
+
+	cos_angle *= 0.5 + 1.0;
+	//cos_angle = max(-1.0, cos_angle);
+	//cos_angle = min(1.0, cos_angle);
 
 	vec3 colorNightMix = mix(texColorNight,texColorWorld,cos_angle);
 	vec3 colorWithLight;
-	//land
-	if(texWater.x!=0.0){
-		colorWithLight  = mix(colorLight,colorNightMix,0.8);
-	}
-	//water
-	else{
-		colorWithLight  = mix(colorLight,colorNightMix,1.0);
-	}
 
-	//land
+
+		colorWithLight  = (colorLight+colorNightMix);
+
+
+
 
 		gl_FragColor = vec4(colorWithLight, 1.0);
 

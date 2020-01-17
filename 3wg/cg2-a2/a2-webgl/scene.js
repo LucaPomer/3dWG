@@ -37,8 +37,8 @@ class Scene {
         this.lights = [];
         // a light
         this.lights[0] = new Light(gl, {
-            position : [50,10,10,1],
-            color    : [1,1,1]
+            position : [1000,100,100,1],
+            color    : [0.2,0.2,0.2]
         });
         this.lights[1] = new Light(gl, {
             position : [50,10,10,1],
@@ -51,7 +51,7 @@ class Scene {
             ambient   : [0.1,0.1,0.1],
             diffuse   : [1,1,1],
             specular  : [1,1,1],
-            shininess : 4.0
+            shininess : 40.0
         });
 
 
@@ -77,8 +77,8 @@ class Scene {
         });
 
         this.sphere = new Sphere(gl,{
-            numLatitudes: 30,
-            numLongitudes: 30,
+            numLatitudes: 100,
+            numLongitudes: 100,
             center : vec3.createFrom(0,0,0)
         });
      
