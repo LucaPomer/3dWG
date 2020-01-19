@@ -31,12 +31,17 @@ window.onload = function() {
     let time = -delta
 
     //scene\
-    //aufgabe 1
-    /**var geometry = new THREE.BoxGeometry( 3, 3, 3 );
+    //Player
+    var geometry = new THREE.BoxGeometry( 2, 2, 2 );
     var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    var cube = new THREE.Mesh( geometry, material );
-    cube.position.set(5,5,5);
-    scene.add( cube );**/
+    var player = new THREE.Mesh( geometry, material );
+    player.position.y = 11;
+    let playerGroup = new THREE.Group();
+    playerGroup.add(player);
+    playerGroup.rotation.x = 1;
+   // playerGroup.rotation.z += 1;
+  //  scene.add( playerGroup );
+
 //light globe
     var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.7 );
    scene.add( light );
@@ -64,10 +69,10 @@ window.onload = function() {
     cone3.position.y =3;
     cone4.position.y =1;
     treeCrown.add( cone );
-   treeCrown.add( cone2 );
-   treeCrown.add( cone3 );
+    treeCrown.add( cone2 );
+    treeCrown.add( cone3 );
     treeCrown.add( cone4 );
-treeCrown.position.y = 2;
+    treeCrown.position.y = 2;
     treeGroup.add(treeCrown);
 
     //tree stamp
@@ -95,19 +100,28 @@ treeCrown.position.y = 2;
     light.castShadow = true;
     light.shadowDarkness = 0.5;
     scene.add( light );
-ß
-
-
-
-  //alternative camrea
-    let cameraJupiter = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 200 );
-    let vecJupiter = new THREE.Vector3(0,0,0);
-    var groupJupiterCamera = new THREE.Group();
-    groupJupiterCamera.add(cameraJupiter);
-    jupiter.add(groupJupiterCamera);
-    cameraJupiter.translateZ(4);
-    cameraJupiter.translateY(2);
 **/
+
+
+
+// alternative camrea
+    let cameraPlayer = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 200 );
+    var groupPlayerCamera = new THREE.Group();
+    let vecPlayer = new THREE.Vector3(0,0,0);
+    groupPlayerCamera.add(cameraPlayer);
+    player.add(groupPlayerCamera);
+    groupPlayerCamera.position.z += 5;
+    groupPlayerCamera.position.y += 2;
+    //cameraPlayer.lookAt(player.position);
+    player.getWorldPosition(vecPlayer);
+    cameraPlayer.lookAt(vecPlayer);
+
+    //testRotation
+    let playerWithCameraGroup = new THREE.Group()
+    playerWithCameraGroup.add(playerGroup);
+    scene.add(playerWithCameraGroup);
+
+
 
     //skydome
 
@@ -129,7 +143,7 @@ let camreaTorender = camera;
         time += delta
 
        // groupJupiterCamera.rotation.y += 0.003;
-
+        playerWithCameraGroup.rotation.z +=0.002;
 
         //camera.position.x = radius * Math.sin(time)
        // camera.position.z = radius * Math.cos(time)
@@ -142,7 +156,7 @@ let camreaTorender = camera;
         var keyCode = event.which;
         if(keyCode===32){
             if(mainCamera){
-                camreaTorender = cameraJupiter;
+                camreaTorender = cameraPlayer;
                 mainCamera=false;
             }
             else{
