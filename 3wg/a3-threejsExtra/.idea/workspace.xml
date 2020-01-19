@@ -18,12 +18,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
+            <state relative-caret-position="403">
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#4390#4630#0" />
+                <element signature="e#5009#5021#0" />
+                <element signature="e#5059#5083#0" />
+                <element signature="e#5206#5277#0" />
+                <element signature="e#5343#5414#0" />
                 <element signature="e#5663#5679#0" />
                 <element signature="e#6115#6564#0" />
+                <element signature="e#7453#8724#0" />
               </folding>
             </state>
           </provider>
@@ -75,6 +81,11 @@
             <path>
               <item name="a3-threejsExtra" type="b2602c69:ProjectViewProjectNode" />
               <item name="a3-threejsExtra" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="a3-threejsExtra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a3-threejsExtra" type="462c0819:PsiDirectoryNode" />
               <item name="texts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -117,12 +128,12 @@
       <workItem from="1578664409872" duration="697000" />
       <workItem from="1578665498464" duration="15739000" />
       <workItem from="1579260802577" duration="6010000" />
-      <workItem from="1579432341932" duration="11375000" />
+      <workItem from="1579432341932" duration="15863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35448000" />
+    <option name="totallyTimeSpent" value="39936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
@@ -166,12 +177,18 @@
     <entry file="file://$PROJECT_DIR$/node_modules/three/build/three.js" />
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
+        <state relative-caret-position="403">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#4390#4630#0" />
+            <element signature="e#5009#5021#0" />
+            <element signature="e#5059#5083#0" />
+            <element signature="e#5206#5277#0" />
+            <element signature="e#5343#5414#0" />
             <element signature="e#5663#5679#0" />
             <element signature="e#6115#6564#0" />
+            <element signature="e#7453#8724#0" />
           </folding>
         </state>
       </provider>

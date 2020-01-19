@@ -5,6 +5,8 @@
 
 window.onload = function() {
 
+
+
     //texture loaeder
     const loader = new THREE.TextureLoader();
     // setup the renderer
@@ -26,15 +28,20 @@ window.onload = function() {
 
 
 
+
+
+
     // setup simulation
     let delta = 1 / 60
     let time = -delta
 
     //scene\
     //Player
-    const planetTexture = loader.load('textures/2k_earth.jpg');
+    //const planetTexture = loader.load('textures/2k_earth.jpg');
     var geometry = new THREE.BoxGeometry( 2, 2, 2 );
-    var material = new THREE.MeshBasicMaterial( { map: planetTexture } );
+    var material = new THREE.MeshBasicMaterial( { color: 0xE1CEBB } );
+    material.opacity = 0.4;
+    material.transparent=true;
     var player = new THREE.Mesh( geometry, material );
     player.position.y = 11;
     let playerGroup = new THREE.Group();
@@ -56,6 +63,7 @@ window.onload = function() {
     planet.receiveShadow = true;
    //sun.castShadow = true;
     scene.add( planet );
+
 
     //tree
     let treeCrown = new THREE.Group();
@@ -82,18 +90,34 @@ window.onload = function() {
      var material = new THREE.MeshBasicMaterial( { color: 0x92510E } );
      var stamp = new THREE.Mesh( geometry, material );
      treeStamp.add(stamp);
-
      treeGroup.add( treeStamp );
      treeGroup.position.y = 10;
-     treeGroup.scale.set(0.4,0.4,0.4);
-     let tree2 = treeGroup.clone();
+  //   treeGroup.scale.set(0.4,0.4,0.4);
+
+
+function CreateTree(positon,scale){
+    let tree2 = treeGroup.clone();
     let tree2Group = new THREE.Group();
     tree2Group.add(tree2);
-    tree2Group.rotation.z += 0.7;
+    tree2.scale.set(scale,scale,scale);
+    tree2Group.rotation.z = positon.z;
+    tree2Group.rotation.x = positon.x;
+    tree2Group.rotation.y = positon.y;
 
 
-     scene.add(treeGroup);
-     scene.add(tree2Group);
+    scene.add(tree2Group);
+}
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+    }
+
+for ( let i =0;i<25;i++){
+    CreateTree(new THREE.Vector3(0,0,getRandomInt((-Math.PI),-0.2)),0.4);
+    CreateTree(new THREE.Vector3(getRandomInt(1,(Math.PI*2)),getRandomInt(1,(Math.PI*2)),getRandomInt(1,(Math.PI*2))),0.6);
+    }
 
 /**    //sunLIght
     var light = new THREE.PointLight( 0xFFFFFF, 1, 8000 );
@@ -116,6 +140,24 @@ window.onload = function() {
     //cameraPlayer.lookAt(player.position);
     player.getWorldPosition(vecPlayer);
     cameraPlayer.lookAt(vecPlayer);
+
+
+    // Music by :https://patrickdearteaga.com
+    // create an AudioListener and add it to the camera
+    var listener = new THREE.AudioListener();
+    cameraPlayer.add( listener );
+
+    // create a global audio source
+    var sound = new THREE.Audio( listener );
+
+    // load a sound and set it as the Audio object's buffer
+    var audioLoader = new THREE.AudioLoader();
+    audioLoader.load( 'music/calm.ogg', function( buffer ) {
+        sound.setBuffer( buffer );
+        sound.setLoop( true );
+        sound.setVolume( 0.5 );
+        sound.play();
+    });
 
     //testRotation
     let playerWithCameraGroup = new THREE.Group()
@@ -143,11 +185,7 @@ let camreaTorender = camera;
     let update = function() {
         time += delta
 
-       // groupJupiterCamera.rotation.y += 0.003;
 
-
-        //camera.position.x = radius * Math.sin(time)
-       // camera.position.z = radius * Math.cos(time)
         camera.lookAt(new THREE.Vector3(0, 0, 0))
     }
 
