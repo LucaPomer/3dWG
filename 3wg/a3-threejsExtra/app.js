@@ -9,7 +9,7 @@ window.onload = function() {
     const loader = new THREE.TextureLoader();
     // setup the renderer
     let renderer  = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth-20, window.innerHeight-20 );
     document.body.appendChild( renderer.domElement );
     renderer.shadowMapEnabled = true;
 
@@ -32,8 +32,9 @@ window.onload = function() {
 
     //scene\
     //Player
+    const planetTexture = loader.load('textures/2k_earth.jpg');
     var geometry = new THREE.BoxGeometry( 2, 2, 2 );
-    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    var material = new THREE.MeshBasicMaterial( { map: planetTexture } );
     var player = new THREE.Mesh( geometry, material );
     player.position.y = 11;
     let playerGroup = new THREE.Group();
@@ -48,7 +49,7 @@ window.onload = function() {
 
 
         //Planet
-    const planetTexture = loader.load('textures/2k_earth.jpg');
+   // const planetTexture = loader.load('textures/2k_earth.jpg');
     var sphereGeometry = new THREE.SphereGeometry( 10, 32, 32 );
     var material = new THREE.MeshLambertMaterial( { color: 0x11B2D4 } );
     var planet = new THREE.Mesh( sphereGeometry, material );
@@ -143,13 +144,19 @@ let camreaTorender = camera;
         time += delta
 
        // groupJupiterCamera.rotation.y += 0.003;
-        playerWithCameraGroup.rotation.z +=0.002;
+
 
         //camera.position.x = radius * Math.sin(time)
        // camera.position.z = radius * Math.cos(time)
         camera.lookAt(new THREE.Vector3(0, 0, 0))
     }
 
+    let movingStraight = true;
+    let movingLeft = false;
+    let movingRight = false;
+    let movingDown= false;
+
+    let speedPlayer = 0.01;
     let mainCamera = true;
     document.addEventListener("keydown", onDocumentKeyDown, false);
     function onDocumentKeyDown(event) {
@@ -163,9 +170,140 @@ let camreaTorender = camera;
                 camreaTorender=camera;
                 mainCamera=true;
             }
+        }
+        //left arrow
+        if(keyCode === 37 ){
+            console.log("rotating left"+ THREE.Math.degToRad(90));
+            player.rotateY(THREE.Math.degToRad(90));
+            SetMovementDirectionToLeft();
+        }
+        //right arrow
+        if(keyCode === 39){
+            console.log("rotating right" + THREE.Math.degToRad(270));
+             player.rotation.y-=(THREE.Math.degToRad(90));
+            SetMovementDirectionToRight();
+        }
+        //up arrow
+        if(keyCode === 38){
+            if (movingStraight){
+                console.log("moving strait");
+                playerWithCameraGroup.rotateX(-speedPlayer);
+            }
+            if(movingDown){
+                console.log("moving down");
+                playerWithCameraGroup.rotateX(speedPlayer);
+            }
+        }
+        //down arrow
+        if(keyCode === 40){
+            if (movingStraight){
+                playerWithCameraGroup.rotation.x +=speedPlayer;
+            }
+            if(movingDown){
+                playerWithCameraGroup.rotation.x -=speedPlayer;
+            }
 
         }
     }
+
+    function SetMovementDirectionToLeft(){
+        console.log(" BEFOR$EE strait "+ movingStraight + " left " + movingLeft + " right " + movingRight + " down " + movingDown);
+        if(movingStraight){
+            movingLeft =true;
+            movingStraight = false;
+        }
+        else if(movingLeft){
+            movingDown=true;
+            movingLeft=false;
+        }
+        else if(movingDown){
+            movingRight=true;
+            movingDown=false;
+        }
+        else if(movingRight){
+            movingStraight=true;
+            movingRight=false;
+        }
+        console.log(" AFTER strait "+ movingStraight + " left " + movingLeft + " right " + movingRight + " down " + movingDown);
+    }
+
+    function SetMovementDirectionToRight(){
+        if(movingStraight){
+            movingRight =true;
+            movingStraight = false;
+        }
+        else if(movingRight){
+            movingDown=true;
+            movingRight=false;
+        }
+        else if(movingDown){
+            movingLeft=true;
+            movingDown=false;
+        }
+        else if(movingLeft){
+            movingStraight=true;
+            movingLeft=false;
+        }
+    }
+
+    //create Text
+     CreateText(0,10,2,5,"hello");
+
+    //text
+    function CreateText(x,y,z,size,textToWrite){
+
+
+    var fontLoader = new THREE.FontLoader();
+    fontLoader.load( 'texts/Sittella_Regular.json', function ( font ) {
+
+        var xMid, text;
+
+        var color = 0x006699;
+
+        var matLite = new THREE.MeshBasicMaterial({
+            color: color,
+            transparent: true,
+            opacity: 1,
+            side: THREE.DoubleSide
+        });
+
+    var message = textToWrite;
+
+    var shapes = font.generateShapes( message, size );
+    var geometry = new THREE.ShapeBufferGeometry( shapes );
+    geometry.computeBoundingBox();
+    xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
+    geometry.translate( xMid, 0, 0 );
+
+    // make shape ( N.B. edge view not visible )
+    text = new THREE.Mesh( geometry, matLite );
+    text.position.z =  z;
+    text.position.y =  y;
+    text.position.x =  x;
+
+
+        scene.add(text);
+
+        var holeShapes = [];
+
+        for ( var i = 0; i < shapes.length; i ++ ) {
+
+            var shape = shapes[ i ];
+
+            if ( shape.holes && shape.holes.length > 0 ) {
+
+                for ( var j = 0; j < shape.holes.length; j ++ ) {
+                    var hole = shape.holes[ j ];
+                    holeShapes.push( hole );
+                }
+            }
+        }
+        shapes.push.apply( shapes, holeShapes );
+
+    });
+
+    }
+
     // simulation loop
     let render = function() {
         requestAnimationFrame(render)
