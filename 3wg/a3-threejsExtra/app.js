@@ -23,7 +23,7 @@ window.onload = function() {
     // create a camera
     let camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
    camera.position.z = 27;
-    camera.position.y = 2;
+    camera.position.y = 2.5;
     let radius = 10
 
 
@@ -47,11 +47,12 @@ window.onload = function() {
     let playerGroup = new THREE.Group();
     playerGroup.add(player);
     playerGroup.rotation.x = 1;
+    player.castShadow=true;
    // playerGroup.rotation.z += 1;
   //  scene.add( playerGroup );
 
 //light globe
-    var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.7 );
+    var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.2 );
    scene.add( light );
 
 
@@ -100,32 +101,29 @@ function CreateTree(positon,scale){
     let tree2Group = new THREE.Group();
     tree2Group.add(tree2);
     tree2.scale.set(scale,scale,scale);
-    tree2Group.rotation.z = positon.z;
+
     tree2Group.rotation.x = positon.x;
     tree2Group.rotation.y = positon.y;
+    tree2Group.rotation.z = positon.z;
 
 
     scene.add(tree2Group);
 }
-
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-    }
-
+// --------- Forest ----------------//
 for ( let i =0;i<25;i++){
-    CreateTree(new THREE.Vector3(0,0,getRandomInt((-Math.PI),-0.2)),0.4);
-    CreateTree(new THREE.Vector3(getRandomInt(1,(Math.PI*2)),getRandomInt(1,(Math.PI*2)),getRandomInt(1,(Math.PI*2))),0.6);
+    CreateTree(new THREE.Vector3(i,0.3,0.3),0.4);
+    CreateTree(new THREE.Vector3(i,-0.3,-0.3),0.4);
+    CreateTree(new THREE.Vector3(i,1,1),0.5);
+    CreateTree(new THREE.Vector3(i,-1,-1),0.5);
+  //  CreateTree(new THREE.Vector3(getRandomInt(1,(Math.PI*2)),getRandomInt(1,(Math.PI*2)),getRandomInt(1,(Math.PI*2))),0.6);
     }
 
-/**    //sunLIght
-    var light = new THREE.PointLight( 0xFFFFFF, 1, 8000 );
-    light.position.set( 0, 0, 0 );
+   //sunLIght
+    var light = new THREE.PointLight( 0xFFFFFF, 1, 100,2 );
+    light.position.set( player.position );
     light.castShadow = true;
     light.shadowDarkness = 0.5;
-    scene.add( light );
-**/
+    player.add( light );
 
 
 
@@ -135,8 +133,8 @@ for ( let i =0;i<25;i++){
     let vecPlayer = new THREE.Vector3(0,0,0);
     groupPlayerCamera.add(cameraPlayer);
     player.add(groupPlayerCamera);
-    groupPlayerCamera.position.z += 5;
-    groupPlayerCamera.position.y += 2;
+    groupPlayerCamera.position.z += 6;
+    groupPlayerCamera.position.y += 2.5;
     //cameraPlayer.lookAt(player.position);
     player.getWorldPosition(vecPlayer);
     cameraPlayer.lookAt(vecPlayer);
@@ -179,13 +177,12 @@ for ( let i =0;i<25;i++){
     scene.add(sky);
 
 
-
-
+    let speedPlayer = 0.001;
 let camreaTorender = camera;
     let update = function() {
         time += delta
 
-
+        playerWithCameraGroup.rotateX(-speedPlayer);
         camera.lookAt(new THREE.Vector3(0, 0, 0))
     }
 
@@ -194,7 +191,7 @@ let camreaTorender = camera;
     let movingRight = false;
     let movingDown= false;
 
-    let speedPlayer = 0.01;
+
     let mainCamera = true;
     document.addEventListener("keydown", onDocumentKeyDown, false);
     function onDocumentKeyDown(event) {
@@ -211,81 +208,32 @@ let camreaTorender = camera;
         }
         //left arrow
         if(keyCode === 37 ){
-            console.log("rotating left"+ THREE.Math.degToRad(90));
             player.rotateY(THREE.Math.degToRad(90));
-            SetMovementDirectionToLeft();
         }
         //right arrow
         if(keyCode === 39){
-            console.log("rotating right" + THREE.Math.degToRad(270));
              player.rotation.y-=(THREE.Math.degToRad(90));
-            SetMovementDirectionToRight();
+
         }
         //up arrow
         if(keyCode === 38){
-            if (movingStraight){
-                console.log("moving strait");
-                playerWithCameraGroup.rotateX(-speedPlayer);
-            }
-            if(movingDown){
-                console.log("moving down");
-                playerWithCameraGroup.rotateX(speedPlayer);
-            }
+                player.position.y=(12);
+                cameraPlayer.position.y-=1;
         }
         //down arrow
         if(keyCode === 40){
-            if (movingStraight){
-                playerWithCameraGroup.rotation.x +=speedPlayer;
-            }
-            if(movingDown){
-                playerWithCameraGroup.rotation.x -=speedPlayer;
+                player.position.y=(11);
+                cameraPlayer.position.y+=1;
+
             }
 
-        }
+
+
     }
 
-    function SetMovementDirectionToLeft(){
-        console.log(" BEFOR$EE strait "+ movingStraight + " left " + movingLeft + " right " + movingRight + " down " + movingDown);
-        if(movingStraight){
-            movingLeft =true;
-            movingStraight = false;
-        }
-        else if(movingLeft){
-            movingDown=true;
-            movingLeft=false;
-        }
-        else if(movingDown){
-            movingRight=true;
-            movingDown=false;
-        }
-        else if(movingRight){
-            movingStraight=true;
-            movingRight=false;
-        }
-        console.log(" AFTER strait "+ movingStraight + " left " + movingLeft + " right " + movingRight + " down " + movingDown);
-    }
-
-    function SetMovementDirectionToRight(){
-        if(movingStraight){
-            movingRight =true;
-            movingStraight = false;
-        }
-        else if(movingRight){
-            movingDown=true;
-            movingRight=false;
-        }
-        else if(movingDown){
-            movingLeft=true;
-            movingDown=false;
-        }
-        else if(movingLeft){
-            movingStraight=true;
-            movingLeft=false;
-        }
-    }
 
     //create Text
-     CreateText(0,10,2,5,"hello");
+     CreateText(0,10,2,5,"Start");
 
     //text
     function CreateText(x,y,z,size,textToWrite){
