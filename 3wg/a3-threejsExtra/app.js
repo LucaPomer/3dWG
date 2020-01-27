@@ -210,6 +210,7 @@ window.onload = function () {
             if(player.position.y!=12){
                 player.position.y = (12);
                 cameraPlayer.position.y -= 1;
+
             }
 
         }
@@ -289,27 +290,62 @@ window.onload = function () {
     var spike = new THREE.Mesh(geometry, material);
     // spikes.add(spike);
     spike.position.y = 10;
-    //spikes.rotation.x = 2;
-    scene.add(spike);
-
+    let spikeGroup = new THREE.Group();
+    scene.add(spikeGroup);
     let collidableMeshList = [spike];
+    let rotation = 0.3;
+    for (let i = 0; i < 7 ; i++) {
+        let spikeI = spike.clone();
+        let spikeGroupI = new THREE.Group();
+        spikeGroupI.add(spikeI);
+        rotation+=Math.PI/7;
+        spikeGroupI.rotation.x = rotation;
+        scene.add(spikeGroupI);
+        collidableMeshList.push(spikeI);
+    }
+
+    //upperSpikes
+   /** rotation = 0.5;
+    for (let i = 0; i < 3 ; i++) {
+        let spikeI = spike.clone();
+        spikeI.position.y = 13;
+        let spikeGroupI = new THREE.Group();
+        spikeGroupI.add(spikeI);
+        rotation+=Math.PI/3;
+        spikeGroupI.rotation.x = rotation;
+        scene.add(spikeGroupI);
+        collidableMeshList.push(spikeI);
+    }**/
+
+
+    //spikes.rotation.x = 2;
+    spikeGroup.add(spike);
+    spikeGroup.rotation.x = -0.3;
+
+
+
+
+
 
     //***-----------COLLISION DETECTION----------------*****///
 
     function ColisionDetection() {
         let positonPlayer = new THREE.Vector3(1, 1, 1);
         player.getWorldPosition(positonPlayer);
+      //  positonPlayer=Math.abs(positonPlayer);
         let positonObject = new THREE.Vector3(0, 0, 0);
 
         for (let i = 0; i < collidableMeshList.length; i++) {
             collidableMeshList[i].getWorldPosition(positonObject);
+        //    positonObject = Math.abs(positonObject);
             //console.log("position " +positonObject.z + " " + positonPlayer.z);
-            if (positonObject.z - positonPlayer.z < 1 && positonObject.z - positonPlayer.z > -1) {
+            if (Math.abs((positonObject.z - positonPlayer.z))< 1) {
                 if (positonObject.y - positonPlayer.y < 1 && positonObject.y - positonPlayer.y > -1) {
-                    console.log("Hit " + positonObject.y + " " + positonPlayer.y);
+                    console.log("Hit " + positonObject.z + " " + positonPlayer.z);
                     playerWithCameraGroup.rotation.x = 0.1;
                 }
             }
+
         }
 
     }
