@@ -94,7 +94,7 @@ class Scene {
                 program : shaders.getProgram('manip')
 
                 }),
-             **/
+
           'sphere' : new Model(gl,{
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
@@ -109,7 +109,7 @@ class Scene {
                 program: shaders.getProgram('phong_pixel'),
                 transform:mat4.multiply(mat4.translate(mat4.identity(), vec3.createFrom(-15,-5,0)),mat4.scale(mat4.identity(),vec3.createFrom(3,3,3)),)
                 // light: this.lights[0],
-            }),
+            }),**/
             'sphereEarth' : new Model(gl,{
                 mesh : this.sphere.mesh,
                 material : this.materials['white'],
